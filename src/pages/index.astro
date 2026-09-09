@@ -1,6 +1,7 @@
 ---
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout
@@ -8,155 +9,244 @@ import Layout from '../layouts/Layout.astro';
   description="全国の中学生・高校生が地域と学校を越えて集い、次世代の防災スタンダードを創るプラットフォーム。"
 >
   <!-- ナビゲーションバー -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/70">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="/summit/" class="flex items-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
-        <span class="font-black text-slate-900 tracking-tight text-base sm:text-lg">
-          全国生徒会防災サミット
-        </span>
+  <header class="sticky top-0 z-50 bg-white/75 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
+    <div class="max-w-6xl mx-auto px-6 h-18 flex items-center justify-between">
+      <a href={baseUrl} class="flex items-center gap-3.5 group">
+        <div class="relative">
+          <div class="absolute -inset-1 bg-gradient-to-r from-orange-400 to-blue-500 rounded-full blur-xs opacity-50 group-hover:opacity-100 transition duration-300"></div>
+          <img
+            src={`${baseUrl}logo.png`}
+            alt="ロゴ"
+            class="relative w-9 h-9 object-contain rounded-full bg-white p-0.5"
+          />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-black text-slate-900 tracking-tight text-base sm:text-lg leading-none">
+            全国生徒会防災サミット
+          </span>
+          <span class="text-[9px] font-black tracking-widest text-slate-400 uppercase mt-1">National Student Summit</span>
+        </div>
       </a>
-      <nav class="flex items-center gap-4 text-xs font-bold text-slate-600">
-        <a href="#about" class="hover:text-blue-600 transition hidden sm:inline">理念</a>
-        <a href="#events" class="hover:text-blue-600 transition hidden sm:inline">開催一覧</a>
-        <a href="#organizer" class="hover:text-blue-600 transition hidden sm:inline">運営体制</a>
+
+      <nav class="flex items-center gap-6 text-xs font-bold text-slate-600">
+        <a href="#about" class="hover:text-blue-600 transition hidden md:inline">理念・3つの柱</a>
+        <a href="#events" class="hover:text-blue-600 transition hidden md:inline">開催一覧</a>
+        <a href="#organizer" class="hover:text-blue-600 transition hidden md:inline">運営体制</a>
         <a
           href="https://www.instagram.com/pred.studentsummit"
           target="_blank"
           rel="noopener noreferrer"
-          class="px-3.5 py-1.5 rounded-full bg-slate-900 text-white hover:bg-blue-600 transition shadow-xs"
+          class="px-4 py-2 rounded-full bg-slate-900 hover:bg-blue-600 text-white transition shadow-sm font-bold flex items-center gap-1.5"
         >
-          Instagram
+          <span>Instagram</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
         </a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-20">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-36">
     
     <!-- ヒーローセクション -->
-    <section class="text-center space-y-6 pt-4 sm:pt-10">
-      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-bold px-4 py-1.5 rounded-full border border-blue-100">
-        全国の中学・高校生がつくる「次世代の防災」
-      </div>
+    <section class="relative pt-6 sm:pt-12 pb-8">
+      <!-- 背景：ロゴ連動のオーロラカラーグラデーション -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-emerald-200/30 via-sky-200/40 to-orange-200/30 blur-3xl pointer-events-none -z-10 rounded-full"></div>
 
-      <h1 class="text-3xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
-        「守られる側」から、<br class="hidden sm:inline" />
-        <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 bg-clip-text text-transparent">
-          未来を動かす側へ。
-        </span>
-      </h1>
-
-      <p class="max-w-2xl mx-auto text-sm sm:text-base text-slate-600 leading-relaxed">
-        災害対応における若者の行動力が問われるいま、学校や地域を越えた本音の議論とアクションの場を創出。<br class="hidden sm:inline" />
-        全国の生徒会・次世代リーダーが集まり、リアルな知恵と解決策をシェアするプラットフォームです。
-      </p>
-
-      <!-- 最新イベントへの導線バナー -->
-      <div class="pt-4">
-        <div class="max-w-xl mx-auto p-4 sm:p-5 bg-white/90 backdrop-blur-sm rounded-2xl border border-blue-200/80 shadow-[0_8px_30px_rgb(59,130,246,0.08)] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="text-left">
-            <span class="text-[11px] font-extrabold text-blue-600 uppercase tracking-wider">次回開催予定</span>
-            <p class="font-bold text-slate-900 text-sm sm:text-base">2026 全国生徒会防災サミット 秋の陣</p>
-            <p class="text-xs text-slate-500 font-mono">2026.09.13 (Sun) 17:00-19:00 / Zoom</p>
+      <div class="relative z-10 text-center max-w-4xl mx-auto space-y-8">
+        
+        <!-- 中央シンボルロゴ展示 -->
+        <div class="flex justify-center">
+          <div class="relative group">
+            <div class="absolute -inset-3 bg-gradient-to-tr from-emerald-400 via-sky-500 to-orange-400 rounded-full blur-xl opacity-35 group-hover:opacity-60 transition duration-500"></div>
+            <div class="relative p-2 rounded-full bg-white/80 backdrop-blur-md border border-white/60 shadow-xl">
+              <img
+                src={`${baseUrl}logo.png`}
+                alt="全国生徒会防災サミット シンボルマーク"
+                class="w-24 h-24 sm:w-32 sm:h-32 object-contain transform group-hover:scale-105 transition duration-300"
+              />
+            </div>
           </div>
-          <a
-            href="https://www.instagram.com/pred.studentsummit"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold text-center shrink-0 transition"
-          >
-            特設案内へ →
-          </a>
         </div>
+
+        <!-- キャッチコピーエリア -->
+        <div class="space-y-4">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-slate-200 text-blue-700 text-xs font-bold shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            全国中高生主導プロジェクト
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-slate-900 tracking-tight leading-[1.12]">
+            「守られる側」から、<br />
+            <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 bg-clip-text text-transparent">
+              未来を動かす側へ。
+            </span>
+          </h1>
+
+          <p class="max-w-2xl mx-auto text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
+            災害が起きたとき、学校や地域を動かすのは誰だ？<br class="hidden sm:inline" />
+            知識を詰め込む避難訓練を超え、全国の生徒会がつながり、本気でディスカッションし、<br class="hidden sm:inline" />
+            リアルなアクションへアップデートする1日。
+          </p>
+        </div>
+
+        <!-- 特大イベントカード（次回開催フィーチャー） -->
+        <div class="pt-4 max-w-2xl mx-auto">
+          <div class="relative overflow-hidden bg-white/95 rounded-3xl p-7 sm:p-9 border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
+            <!-- カード上部のアクセントカラーライン -->
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-400 via-blue-500 to-emerald-400"></div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <div class="text-left space-y-2.5">
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-0.5 rounded-md bg-slate-900 text-white text-[10px] font-black tracking-widest uppercase">
+                    NEXT SUMMIT
+                  </span>
+                  <span class="text-xs font-bold text-orange-600 bg-orange-50 px-2 py-0.5 rounded border border-orange-100">
+                    エントリー受付中
+                  </span>
+                </div>
+                
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                  2026 全国生徒会防災サミット 秋の陣
+                </h3>
+                
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm font-semibold text-slate-600">
+                  <span class="text-blue-600 font-mono font-bold">2026.09.13 (Sun) 17:00–19:00</span>
+                  <span class="text-slate-300 hidden sm:inline">/</span>
+                  <span>Zoom オンライン配信</span>
+                </div>
+              </div>
+
+              <!-- 立体CTAボタン -->
+              <a
+                href="https://www.instagram.com/pred.studentsummit"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-2xl group shrink-0 w-full sm:w-auto"
+              >
+                <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-400 rounded-2xl blur-xs opacity-60 group-hover:opacity-100 transition duration-300"></span>
+                <span class="relative w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold shadow-md transition duration-200 group-hover:scale-[1.02] active:scale-[0.98]">
+                  <span>特設案内を見る</span>
+                  <svg class="w-3.5 h-3.5 transition duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+              <span>共催：東北生徒会連盟</span>
+              <span>対象：全国の中学・高校生 / 参加無料</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- サミットの3つの柱 (Mission) -->
-    <section id="about" class="space-y-8 scroll-mt-24">
-      <div class="text-center space-y-2">
-        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase">Our Pillars</p>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">3つの柱で育む、実践的防災</h2>
+    <!-- 3つの柱 (Mission) -->
+    <section id="about" class="space-y-12 scroll-mt-24">
+      <div class="text-center space-y-3">
+        <p class="text-xs font-black tracking-widest text-blue-600 uppercase">Core Values</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">3つの柱で育む、実践的防災</h2>
+        <p class="text-sm text-slate-500 max-w-md mx-auto">受動的な座学から、自ら創るリアルなアクションへ。</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white/85 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/80 shadow-xs space-y-4">
-          <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-black text-lg">
-            01
+        <!-- 01: オレンジ（知見） -->
+        <div class="relative bg-white p-8 rounded-3xl border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-orange-500"></div>
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center font-black text-xl border border-orange-100">
+              01
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">知見獲得</h3>
+            <p class="text-sm text-slate-600 leading-relaxed font-medium">
+              最前線で活動する専門家や被災地の現場を知るゲストから、教科書や避難訓練では学べない生きた知見を学びます。
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-slate-900">講演・知見獲得</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            最前線で活動する専門家や被災地のリアルを知る登壇者から、教科書では学べない現場の知識をインプットします。
-          </p>
+          <span class="text-[11px] font-black tracking-widest text-orange-600 uppercase mt-6 block">KNOWLEDGE</span>
         </div>
 
-        <div class="bg-white/85 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/80 shadow-xs space-y-4">
-          <div class="w-10 h-10 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-black text-lg">
-            02
+        <!-- 02: ブルー（体験） -->
+        <div class="relative bg-white p-8 rounded-3xl border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-blue-500"></div>
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-black text-xl border border-blue-100">
+              02
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">実践ワーク</h3>
+            <p class="text-sm text-slate-600 leading-relaxed font-medium">
+              被災状況や学校での避難所設営などを想定した実践的なシミュレーションを通して、身体で動ける対応力を養います。
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-slate-900">体験・ワーク</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            ただ聞くだけでなく、実際のシチュエーションを想定したワークショップなどを通じ、実践で動ける感覚を養います。
-          </p>
+          <span class="text-[11px] font-black tracking-widest text-blue-600 uppercase mt-6 block">EXPERIENCE</span>
         </div>
 
-        <div class="bg-white/85 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/80 shadow-xs space-y-4">
-          <div class="w-10 h-10 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-black text-lg">
-            03
+        <!-- 03: グリーン（発信） -->
+        <div class="relative bg-white p-8 rounded-3xl border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-emerald-500"></div>
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-xl border border-emerald-100">
+              03
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">議論・発信</h3>
+            <p class="text-sm text-slate-600 leading-relaxed font-medium">
+              学校や地域の枠を越え、互いの生徒会の取り組みやアイデアを持ち寄り共有。次世代からの提言を取りまとめます。
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-slate-900">議論・成果発信</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            学校や地域の枠を越え、互いの生徒会の取り組みやアイデアを共有。次のアクションへ向けた提言を取りまとめます。
-          </p>
+          <span class="text-[11px] font-black tracking-widest text-emerald-600 uppercase mt-6 block">DISCUSSION</span>
         </div>
       </div>
     </section>
 
     <!-- 開催ラインナップ / イベント情報 -->
-    <section id="events" class="space-y-6 scroll-mt-24">
-      <div class="text-center space-y-2">
-        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase">Archive & Schedule</p>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">サミット開催情報</h2>
+    <section id="events" class="space-y-8 scroll-mt-24">
+      <div class="text-center space-y-3">
+        <p class="text-xs font-black tracking-widest text-blue-600 uppercase">Schedule & Lineup</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">サミット開催スケジュール</h2>
       </div>
 
-      <div class="bg-white/85 backdrop-blur-sm rounded-3xl border border-slate-200/80 p-6 sm:p-8 space-y-4 shadow-xs">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-slate-50/80 border border-slate-100 gap-4">
-          <div class="space-y-1">
+      <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-2xl bg-slate-50 border border-slate-100 gap-4 hover:border-blue-200 transition">
+          <div class="space-y-1.5">
             <div class="flex items-center gap-2">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-700">受付・準備中</span>
-              <span class="text-xs font-mono text-slate-500">2026.09.13 (Sun)</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-blue-100 text-blue-700">次回開催</span>
+              <span class="text-xs font-mono font-bold text-slate-500">2026.09.13 (Sun)</span>
             </div>
-            <h3 class="font-bold text-slate-800 text-base">2026 全国生徒会防災サミット 秋の陣</h3>
-            <p class="text-xs text-slate-500">テーマ：“Think BIG, We’ll Go Further” / 共催：東北生徒会連盟</p>
+            <h3 class="font-bold text-slate-900 text-lg">2026 全国生徒会防災サミット 秋の陣</h3>
+            <p class="text-xs text-slate-500">テーマ：“Think BIG, We’ll Go Further” ｜ 共催：東北生徒会連盟</p>
           </div>
           <a
             href="https://www.instagram.com/pred.studentsummit"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:border-blue-500 hover:text-blue-600 text-xs font-bold transition shadow-2xs shrink-0"
+            class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:border-blue-500 hover:text-blue-600 text-slate-800 text-xs font-bold transition shadow-2xs shrink-0"
           >
-            詳細を確認
+            詳細・参加方法 →
           </a>
         </div>
 
-        <div class="text-center py-4 text-xs text-slate-400">
-          ※次回以降の開催計画や地方ブロック別のセッションは順次SNS・本サイトにて告知いたします。
+        <div class="text-center py-3 text-xs text-slate-400 font-medium">
+          ※次回以降の開催計画や地方ブロック別のセッションは順次SNS・本サイトにて告知します。
         </div>
       </div>
     </section>
 
     <!-- 主催・運営体制 -->
-    <section id="organizer" class="space-y-6 scroll-mt-24">
-      <div class="text-center space-y-2">
-        <p class="text-xs font-bold tracking-widest text-slate-400 uppercase">Management</p>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">運営体制</h2>
+    <section id="organizer" class="space-y-8 scroll-mt-24">
+      <div class="text-center space-y-3">
+        <p class="text-xs font-black tracking-widest text-slate-400 uppercase">Organizer</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">主催組織</h2>
       </div>
 
       <div class="max-w-2xl mx-auto">
-        <div class="bg-white/85 backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-xs">
-          <span class="text-xs font-bold text-blue-600 tracking-wider">ORGANIZER</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">JYRAC（日本若者防災復興協会）</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+        <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.02)] space-y-3">
+          <span class="text-xs font-black text-blue-600 tracking-wider uppercase">SUMMIT FOUNDER & ORGANIZER</span>
+          <h3 class="text-xl font-black text-slate-900">JYRAC（日本若者防災復興協会）</h3>
+          <p class="text-sm text-slate-600 leading-relaxed font-medium">
             若者の力を結集し、次世代主導の防災教育・被災地支援・地域コミュニティのレジリエンス向上を推進するユース組織。全国の学生ネットワークと共に、持続可能な防災アクションを形にしています。
           </p>
         </div>
@@ -166,18 +256,25 @@ import Layout from '../layouts/Layout.astro';
   </main>
 
   <!-- フッター -->
-  <footer class="mt-20 border-t border-slate-200/60 bg-white/70 py-12 text-center text-xs text-slate-500">
-    <div class="max-w-5xl mx-auto px-6 space-y-3">
-      <p class="font-bold text-slate-800 text-sm">全国生徒会防災サミット</p>
-      <p class="text-slate-400">主催：JYRAC（日本若者防災復興協会）</p>
+  <footer class="mt-28 border-t border-slate-200/80 bg-white/70 py-14 text-center text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto px-6 space-y-4">
+      <div class="flex justify-center mb-1">
+        <img
+          src={`${baseUrl}logo.png`}
+          alt="全国生徒会防災サミット"
+          class="w-10 h-10 object-contain rounded-full opacity-80"
+        />
+      </div>
+      <p class="font-black text-slate-900 text-base">全国生徒会防災サミット</p>
+      <p class="text-slate-400 font-medium">主催：JYRAC（日本若者防災復興協会）</p>
       <div class="pt-2">
         <a
           href="https://www.instagram.com/pred.studentsummit"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-slate-500 hover:text-blue-600 underline underline-offset-4 transition"
+          class="text-slate-600 hover:text-blue-600 underline underline-offset-4 transition font-bold"
         >
-          Instagram: @pred.studentsummit
+          公式Instagram: @pred.studentsummit
         </a>
       </div>
       <p class="text-slate-400 text-[11px] pt-4">© 2026 JYRAC. All rights reserved.</p>
