@@ -13,40 +13,51 @@
       content="全国の中高生が集まり防災に関してより理解を深めていくサミット。"
     />
   </head>
-  <body class="bg-slate-100 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+  <body class="relative bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen">
+    
+    <!-- 背景装飾：グリッドパターンと柔らかなブルーグラデーション -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-tr from-blue-200/40 via-sky-100/30 to-transparent blur-3xl rounded-full"></div>
+      <div class="w-full h-full bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-60"></div>
+    </div>
 
     <!-- ナビゲーションバー -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+    <header class="relative z-50 sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-200/70">
       <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-        <span class="font-bold text-slate-800 tracking-tight text-sm sm:text-base">
+        <span class="font-extrabold text-slate-900 tracking-tight text-sm sm:text-base flex items-center gap-1.5">
           JYRAC <span class="text-blue-500 font-normal">×</span> 東北生徒会連盟
         </span>
         <a
           href="https://www.instagram.com/pred.studentsummit"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs font-semibold px-4 py-1.5 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 transition"
+          class="text-xs font-bold px-3.5 py-1.5 rounded-full border border-slate-300 text-slate-700 hover:border-blue-500 hover:text-blue-600 hover:bg-white transition duration-150 shadow-xs"
         >
-          Instagram
+          Instagram →
         </a>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 space-y-10">
+    <main class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-8">
+      
       <!-- ヒーローカード -->
-      <section class="bg-white rounded-2xl p-8 sm:p-12 text-center shadow-sm border border-slate-200/80">
+      <section class="bg-white/85 backdrop-blur-sm rounded-3xl p-8 sm:p-14 text-center border border-slate-200/80 shadow-[0_4px_20px_rgb(0,0,0,0.03)]">
         <!-- 開催日バッジ -->
-        <div class="inline-block bg-blue-50 text-blue-600 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
+        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-bold px-3.5 py-1.5 rounded-full border border-blue-100 mb-6">
+          <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
           2026.09.13 (Sun) オンライン開催
         </div>
 
         <!-- メインタイトル -->
-        <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3">
-          2026 全国生徒会防災サミット 秋の陣
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-3">
+          2026 全国生徒会防災サミット<br />
+          <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-clip-text text-transparent">
+            秋の陣
+          </span>
         </h1>
 
         <!-- サブタイトル -->
-        <p class="text-lg sm:text-xl font-bold italic text-slate-500 mb-6">
+        <p class="text-lg sm:text-xl font-bold italic text-slate-400 mb-6">
           “ Think BIG, We’ll Go Further ”
         </p>
 
@@ -56,98 +67,106 @@
           講演・体験・議論を通して、これからの時代に必要なアクションを共に創り出します。
         </p>
 
-        <!-- ボタン -->
-        <a
-          href="https://www.instagram.com/pred.studentsummit"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow-md shadow-blue-500/20 transition duration-200"
-        >
-          公式Instagramをチェック
-        </a>
+        <!-- アクションボタン -->
+        <div>
+          <a
+            href="https://www.instagram.com/pred.studentsummit"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-0.5 duration-150"
+          >
+            公式Instagramをチェック
+          </a>
+        </div>
       </section>
 
       <!-- 概要 & スケジュールグリッド -->
       <div class="grid md:grid-cols-2 gap-6 items-start">
         
         <!-- 左カラム：開催概要 -->
-        <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200/80">
-          <h2 class="text-xs font-bold tracking-wider text-slate-400 uppercase mb-4">Event Details</h2>
+        <section class="bg-white/85 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-[0_4px_20px_rgb(0,0,0,0.03)]">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="w-1.5 h-4 bg-blue-600 rounded-full"></span>
+            <h2 class="text-xs font-bold tracking-widest text-slate-400 uppercase">Event Details</h2>
+          </div>
           
           <div class="space-y-3">
             <!-- 日時 -->
-            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
-              <span class="text-xs font-bold text-slate-500 shrink-0 w-10 text-center">日時</span>
-              <div class="text-sm font-semibold text-slate-800 flex items-center gap-2">
-                <span>2026.09.13 <span class="text-xs text-slate-500">(Sun)</span></span>
+            <div class="flex items-center gap-3 p-3.5 bg-slate-50/80 rounded-2xl border border-slate-100">
+              <span class="text-xs font-bold text-slate-400 shrink-0 w-12 text-center">日時</span>
+              <div class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                <span>2026.09.13 <span class="text-xs text-slate-500 font-normal">(Sun)</span></span>
                 <span class="text-slate-300">|</span>
-                <span>17:00 - 19:00</span>
+                <span class="text-blue-600 font-mono text-xs">17:00 - 19:00</span>
               </div>
             </div>
 
             <!-- 会場 -->
-            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
-              <span class="text-xs font-bold text-slate-500 shrink-0 w-10 text-center">会場</span>
-              <span class="text-sm font-semibold text-slate-800">Zoom（オンライン配信）</span>
+            <div class="flex items-center gap-3 p-3.5 bg-slate-50/80 rounded-2xl border border-slate-100">
+              <span class="text-xs font-bold text-slate-400 shrink-0 w-12 text-center">会場</span>
+              <span class="text-sm font-bold text-slate-800">Zoom（オンライン配信）</span>
             </div>
 
             <!-- 主催 -->
-            <div class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl">
-              <span class="text-xs font-bold text-slate-500 shrink-0 w-10 text-center pt-0.5">主催</span>
-              <div class="text-sm font-semibold text-slate-800 leading-snug">
+            <div class="flex items-start gap-3 p-3.5 bg-slate-50/80 rounded-2xl border border-slate-100">
+              <span class="text-xs font-bold text-slate-400 shrink-0 w-12 text-center pt-0.5">主催</span>
+              <div class="text-sm font-bold text-slate-800 leading-snug">
                 JYRAC（日本若者防災復興協会）<br />
-                <span class="text-xs font-normal text-slate-500">共催：東北生徒会連盟</span>
+                <span class="text-xs font-medium text-slate-500">共催：東北生徒会連盟</span>
               </div>
             </div>
 
             <!-- 対象 -->
-            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
-              <span class="text-xs font-bold text-slate-500 shrink-0 w-10 text-center">対象</span>
-              <span class="text-sm font-semibold text-slate-800">全国の中学生・高校生</span>
+            <div class="flex items-center gap-3 p-3.5 bg-slate-50/80 rounded-2xl border border-slate-100">
+              <span class="text-xs font-bold text-slate-400 shrink-0 w-12 text-center">対象</span>
+              <span class="text-sm font-bold text-slate-800">全国の中学生・高校生</span>
             </div>
           </div>
         </section>
 
         <!-- 右カラム：タイムテーブル -->
-        <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200/80">
-          <h2 class="text-xs font-bold tracking-wider text-slate-400 uppercase mb-4">Program Schedule</h2>
+        <section class="bg-white/85 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-[0_4px_20px_rgb(0,0,0,0.03)]">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="w-1.5 h-4 bg-blue-600 rounded-full"></span>
+            <h2 class="text-xs font-bold tracking-widest text-slate-400 uppercase">Program Schedule</h2>
+          </div>
 
-          <!-- タイムライン構造 -->
-          <div class="space-y-6 relative before:absolute before:left-22 before:top-2 before:bottom-2 before:w-px before:bg-slate-200">
+          <!-- タイムライン構造（幅を固定して安定化） -->
+          <div class="space-y-6 relative before:absolute before:left-18 before:top-2 before:bottom-2 before:w-px before:bg-slate-200">
             
-            <div class="flex items-start gap-4 relative">
-              <span class="w-16 font-mono text-xs text-slate-500 pt-0.5 text-right shrink-0">17:00</span>
-              <span class="w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-white shrink-0 mt-1 relative z-10"></span>
+            <div class="flex items-start gap-3 relative">
+              <span class="w-14 font-mono font-bold text-xs text-blue-600 pt-0.5 text-right shrink-0">17:00</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-600 ring-4 ring-white shrink-0 mt-1 relative z-10"></span>
               <div>
                 <p class="text-sm font-bold text-slate-800">開会</p>
-                <p class="text-xs text-slate-500">オープニング・オリエンテーション</p>
+                <p class="text-xs text-slate-500 mt-0.5">オープニング・オリエンテーション</p>
               </div>
             </div>
 
-            <div class="flex items-start gap-4 relative">
-              <span class="w-16 font-mono text-xs text-slate-500 pt-0.5 text-right shrink-0">17:10</span>
-              <span class="w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-white shrink-0 mt-1 relative z-10"></span>
+            <div class="flex items-start gap-3 relative">
+              <span class="w-14 font-mono font-bold text-xs text-blue-600 pt-0.5 text-right shrink-0">17:10</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-600 ring-4 ring-white shrink-0 mt-1 relative z-10"></span>
               <div>
                 <p class="text-sm font-bold text-slate-800">講演セッション</p>
-                <p class="text-xs text-slate-500">専門家によるレクチャー</p>
+                <p class="text-xs text-slate-500 mt-0.5">現場のリアルとこれからの防災</p>
               </div>
             </div>
 
-            <div class="flex items-start gap-4 relative">
-              <span class="w-16 font-mono text-xs text-slate-500 pt-0.5 text-right shrink-0">18:15</span>
-              <span class="w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-white shrink-0 mt-1 relative z-10"></span>
+            <div class="flex items-start gap-3 relative">
+              <span class="w-14 font-mono font-bold text-xs text-blue-600 pt-0.5 text-right shrink-0">18:15</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-600 ring-4 ring-white shrink-0 mt-1 relative z-10"></span>
               <div>
                 <p class="text-sm font-bold text-slate-800">成果提案</p>
-                <p class="text-xs text-slate-500">生徒会・参加者からの発表と議論</p>
+                <p class="text-xs text-slate-500 mt-0.5">生徒会・参加者からの発表と議論</p>
               </div>
             </div>
 
-            <div class="flex items-start gap-4 relative">
-              <span class="w-16 font-mono text-xs text-slate-500 pt-0.5 text-right shrink-0">18:50</span>
-              <span class="w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-white shrink-0 mt-1 relative z-10"></span>
+            <div class="flex items-start gap-3 relative">
+              <span class="w-14 font-mono font-bold text-xs text-blue-600 pt-0.5 text-right shrink-0">18:50</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-600 ring-4 ring-white shrink-0 mt-1 relative z-10"></span>
               <div>
                 <p class="text-sm font-bold text-slate-800">閉会</p>
-                <p class="text-xs text-slate-500">総括・次回案内</p>
+                <p class="text-xs text-slate-500 mt-0.5">総括・次回案内</p>
               </div>
             </div>
 
@@ -162,7 +181,7 @@
     </main>
 
     <!-- フッター -->
-    <footer class="mt-12 py-8 text-center text-xs text-slate-500">
+    <footer class="relative z-10 mt-12 py-8 text-center text-xs text-slate-400 border-t border-slate-200/60">
       <p class="mb-1">© 2026 JYRAC / 東北生徒会連盟. All rights reserved.</p>
     </footer>
   </body>
