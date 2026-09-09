@@ -1,7 +1,6 @@
 ---
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-import Statement from '../components/Statement.astro';
 
 const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const logoPath = `${cleanBase}/logo.png`;
@@ -35,7 +34,7 @@ const logoPath = `${cleanBase}/logo.png`;
         </div>
       </a>
 
-      <!-- PC用ナビゲーション (md以上で表示) -->
+      <!-- PC用ナビゲーション -->
       <nav class="hidden md:flex items-center gap-1.5 p-1.5 bg-slate-100/70 border border-slate-200/60 rounded-full backdrop-blur-md">
         <a href="#statement" class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
           理念宣言
@@ -65,7 +64,7 @@ const logoPath = `${cleanBase}/logo.png`;
         </a>
       </nav>
 
-      <!-- モバイル用バーガーボタン (md未満で表示) -->
+      <!-- モバイル用トグルボタン -->
       <button
         id="menu-toggle"
         type="button"
@@ -80,14 +79,13 @@ const logoPath = `${cleanBase}/logo.png`;
         </svg>
       </button>
 
-      <!-- モバイル用オーバーレイメニュー -->
+      <!-- モバイル用フルスクリーンメニュー -->
       <div
         id="mobile-menu"
         class="fixed inset-0 bg-white/95 backdrop-blur-2xl z-40 flex flex-col justify-between px-6 py-20 hidden md:hidden overflow-y-auto"
       >
         <nav class="relative z-10 flex flex-col space-y-5 pt-4">
           <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">MENU NAVIGATION</span>
-          
           <a href="#statement" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-2 border-b border-slate-100">
             <span>理念宣言</span>
             <span class="text-xs font-mono text-slate-400">01</span>
@@ -223,8 +221,51 @@ const logoPath = `${cleanBase}/logo.png`;
       </div>
     </section>
 
-    <!-- 理念宣言（Statement）セクション -->
-    <Statement />
+    <!-- 理念宣言（インライン統合で外部依存エラーを防止） -->
+    <section id="statement" class="relative scroll-mt-20">
+      <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white/90 backdrop-blur-md p-6 sm:p-14 border border-slate-200/90 shadow-xs">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-400 via-blue-500 to-emerald-400"></div>
+
+        <div class="relative z-10 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-widest uppercase mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+          OUR STATEMENT
+        </div>
+
+        <h2 class="relative z-10 text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+          「誰かの防災」から、<br />
+          <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-500 bg-clip-text text-transparent">
+            「僕らのリアル」へ。
+          </span>
+        </h2>
+
+        <div class="relative z-10 space-y-5 text-xs sm:text-base leading-relaxed text-slate-600 font-medium">
+          <p class="text-base sm:text-lg font-black text-slate-800">
+            災害が起きたとき、動くのは誰だ？
+          </p>
+          <p>
+            「若い世代の力」なんて言われるけれど、地域や学校の枠を越えて本気でぶつかり合える場所は、まだ全然足りてない。
+          </p>
+          <div class="my-4 p-4 sm:p-5 rounded-xl bg-slate-50 border-l-4 border-blue-600">
+            <p class="text-sm sm:text-base font-bold text-slate-900">
+              だから、全国から仲間を集めてサミットを開くことにした。
+            </p>
+          </div>
+          <p>
+            堅苦しい勉強会じゃない。<br />
+            プロの話を聞き、カラダを動かして体験し、本音でディスカッションする。<br />
+            ただ備えるだけじゃない、自分たちの手で未来のセーフティをつくるための1日。
+          </p>
+          <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <p class="text-base sm:text-xl font-black text-blue-600">
+              次の防災を、ここからアップデートしよう。
+            </p>
+            <span class="text-[10px] sm:text-xs font-bold tracking-widest text-slate-400 uppercase">
+              #STUDENT BOSAI SUMMIT
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 3つの柱 (Mission) -->
     <section id="about" class="space-y-8 sm:space-y-12 scroll-mt-20">
