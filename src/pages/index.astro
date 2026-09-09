@@ -15,7 +15,11 @@ const logoPath = `${cleanBase}/logo.png`;
       <a href={`${cleanBase}/`} class="flex items-center gap-2.5 sm:gap-3 no-underline group select-none min-w-0">
         <div class="relative flex items-center justify-center shrink-0">
           <div class="absolute -inset-1 bg-gradient-to-tr from-orange-400 via-sky-400 to-emerald-400 rounded-full blur-xs opacity-60 group-hover:opacity-100 transition duration-300"></div>
-          <img src={logoPath} alt="ロゴ" class="relative w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-full shadow-2xs" />
+          <img
+            src={logoPath}
+            alt="ロゴ"
+            class="relative w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-full shadow-2xs"
+          />
         </div>
         <div class="flex flex-col truncate">
           <span class="font-black text-slate-900 tracking-tight text-sm sm:text-lg leading-tight group-hover:text-blue-600 transition truncate">
@@ -93,9 +97,6 @@ const logoPath = `${cleanBase}/logo.png`;
         <span>お問い合わせ</span>
         <span class="text-xs font-mono text-slate-400">05</span>
       </a>
-      <a href="https://summit2025.jyrac.stki.org" target="_blank" rel="noopener noreferrer" class="mobile-nav-link text-sm font-bold text-slate-500 hover:text-blue-600 transition flex items-center justify-between py-2">
-        <span>過去の取り組み・専門家リポート ↗</span>
-      </a>
     </nav>
 
     <div class="pt-6 border-t border-slate-200 space-y-3">
@@ -137,20 +138,20 @@ const logoPath = `${cleanBase}/logo.png`;
           </div>
 
           <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tight leading-[1.2] break-words">
-            「守られる側」から、<br/>
+            「守られる側」から、<br />
             <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 bg-clip-text text-transparent">
               未来を動かす側へ。
             </span>
           </h1>
 
           <p class="max-w-2xl mx-auto text-xs sm:text-base text-slate-600 leading-relaxed font-medium">
-            教科書通りの避難訓練、本当に現場で役に立つ？<br class="hidden sm:inline"/>
+            教科書通りの避難訓練、本当に現場で役に立つ？<br class="hidden sm:inline" />
             災害が起きた瞬間、学校や地域を実際に動かすのは大人だけじゃない。<br class="hidden sm:inline" />
             全国の生徒会がつながり、リアルな知恵を本音でぶつけ合う、中高生のためのサミット。
           </p>
         </div>
 
-        <!-- サミット日程エリア（9月詳細＋10月DAY 2・11月DAY 3予告） -->
+        <!-- サミット日程エリア（DAY 1 メイン + DAY 2・DAY 3 予告） -->
         <div id="program" class="pt-2 w-full max-w-3xl mx-auto scroll-mt-24 space-y-4">
           
           <!-- 9月特大イベントカード（DAY 1 メイン） -->
@@ -191,7 +192,7 @@ const logoPath = `${cleanBase}/logo.png`;
               </a>
             </div>
 
-            <!-- DAY1 タイムテーブルベースのプログラム -->
+            <!-- DAY1 タイムテーブル -->
             <div class="mt-6 pt-5 border-t border-slate-100 text-left space-y-3">
               <span class="text-[11px] font-black tracking-wider text-slate-400 uppercase">DAY 1 PROGRAM / タイムテーブル</span>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
@@ -219,49 +220,49 @@ const logoPath = `${cleanBase}/logo.png`;
             </div>
           </div>
 
-          <!-- 10月(DAY 2)・11月(DAY 3) 開催予告カード（Coming soon...） -->
+          <!-- 10月(DAY 2)・11月(DAY 3) 開催予告カード（2列グリッド） -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
             <!-- 10月予告: DAY 2 -->
-            <div class="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-sm p-5 border border-dashed border-slate-300 shadow-xs flex flex-col justify-between space-y-3">
+            <div class="relative overflow-hidden rounded-2xl bg-white/85 backdrop-blur-sm p-5 border border-dashed border-slate-300 shadow-xs flex flex-col justify-between space-y-3">
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
                   <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-[10px] font-mono font-black">
                     OCTOBER 2026
                   </span>
-                  <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
+                  <span class="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider">
                     Coming soon...
                   </span>
                 </div>
-                <h4 class="font-black text-slate-900 text-base">全国生徒会防災サミット2026 秋の陣 DAY２</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">
-                  DAY 1での議論を受け、学校連携アクションや地域別プロジェクトを始動する実践セッション。
+                <h4 class="font-black text-slate-900 text-sm">全国生徒会防災サミット2026 秋の陣 DAY２</h4>
+                <p class="text-[11px] text-slate-500 leading-relaxed">
+                  DAY 1の議論を受け、学校連携アクションや地域別プロジェクトを始動する実践セッション。
                 </p>
               </div>
-              <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
-                <span>※日程・詳細は公式SNSで発表</span>
+              <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-medium">
+                <span>詳細順次発表</span>
                 <span class="text-blue-600 font-bold font-mono">DAY 2</span>
               </div>
             </div>
 
             <!-- 11月予告: DAY 3 -->
-            <div class="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-sm p-5 border border-dashed border-slate-300 shadow-xs flex flex-col justify-between space-y-3">
+            <div class="relative overflow-hidden rounded-2xl bg-white/85 backdrop-blur-sm p-5 border border-dashed border-slate-300 shadow-xs flex flex-col justify-between space-y-3">
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
-                  <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 text-[10px] font-mono font-black">
+                  <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 text-[10px] font-mono font-black">
                     NOVEMBER 2026
                   </span>
-                  <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
+                  <span class="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider">
                     Coming soon...
                   </span>
                 </div>
-                <h4 class="font-black text-slate-900 text-base">全国生徒会防災サミット2026 秋の陣 DAY３</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">
+                <h4 class="font-black text-slate-900 text-sm">全国生徒会防災サミット2026 秋の陣 DAY３</h4>
+                <p class="text-[11px] text-slate-500 leading-relaxed">
                   秋の陣の集大成。全国の中高生による実践成果の発表、社会への共同提言を取りまとめます。
                 </p>
               </div>
-              <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
-                <span>※詳細は決定次第アップデート</span>
-                <span class="text-emerald-600 font-bold font-mono">DAY 3</span>
+              <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-medium">
+                <span>詳細順次発表</span>
+                <span class="text-indigo-600 font-bold font-mono">DAY 3</span>
               </div>
             </div>
           </div>
@@ -320,18 +321,6 @@ const logoPath = `${cleanBase}/logo.png`;
                 Think BIG, We’ll Go Further
               </span>
             </div>
-            <!-- 卜部先生の特別レポートや前回サイトへのリンク -->
-            <a
-              href="https://summit2025.jyrac.stki.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-blue-600 no-underline bg-slate-100 hover:bg-slate-200 px-3.5 py-2 rounded-xl transition"
-            >
-              <span>過去の取り組み・専門家リポートを見る</span>
-              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
           </div>
         </div>
       </div>
@@ -512,15 +501,6 @@ const logoPath = `${cleanBase}/logo.png`;
           class="text-slate-600 hover:text-blue-600 no-underline font-bold"
         >
           Instagram
-        </a>
-        <span class="text-slate-300">|</span>
-        <a
-          href="https://summit2025.jyrac.stki.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-slate-600 hover:text-blue-600 no-underline font-bold"
-        >
-          アーカイブ
         </a>
         <span class="text-slate-300">|</span>
         <a
