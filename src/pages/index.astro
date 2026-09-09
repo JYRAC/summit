@@ -14,7 +14,8 @@ const logoPath = `${cleanBase}/logo.png`;
   <!-- ナビゲーションバー -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
     <div class="max-w-6xl mx-auto px-6 h-18 flex items-center justify-between">
-      <a href={`${cleanBase}/`} class="flex items-center gap-3.5 group">
+      <!-- ロゴ -->
+      <a href={`${cleanBase}/`} class="flex items-center gap-3.5 group z-50">
         <div class="relative flex items-center justify-center">
           <div class="absolute -inset-1 bg-gradient-to-r from-orange-400 via-sky-400 to-emerald-400 rounded-full blur-xs opacity-50 group-hover:opacity-100 transition duration-300"></div>
           <img
@@ -31,11 +32,12 @@ const logoPath = `${cleanBase}/logo.png`;
         </div>
       </a>
 
-      <nav class="flex items-center gap-6 text-xs font-bold text-slate-600">
-        <a href="#statement" class="hover:text-blue-600 transition hidden md:inline">理念宣言</a>
-        <a href="#about" class="hover:text-blue-600 transition hidden md:inline">3つの柱</a>
-        <a href="#events" class="hover:text-blue-600 transition hidden md:inline">開催一覧</a>
-        <a href="#organizer" class="hover:text-blue-600 transition hidden md:inline">運営体制</a>
+      <!-- PC用ナビゲーション -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-600">
+        <a href="#statement" class="hover:text-blue-600 transition">理念宣言</a>
+        <a href="#about" class="hover:text-blue-600 transition">3つの柱</a>
+        <a href="#events" class="hover:text-blue-600 transition">開催一覧</a>
+        <a href="#organizer" class="hover:text-blue-600 transition">運営体制</a>
         <a
           href="https://www.instagram.com/pred.studentsummit"
           target="_blank"
@@ -48,6 +50,67 @@ const logoPath = `${cleanBase}/logo.png`;
           </svg>
         </a>
       </nav>
+
+      <!-- モバイル用：洗練されたバーガーボタントグル -->
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-label="メニューを開く"
+        class="relative md:hidden z-50 w-11 h-11 flex flex-col justify-center items-center rounded-2xl bg-slate-100/80 hover:bg-slate-200/60 border border-slate-200/80 transition-all focus:outline-none"
+      >
+        <span class="line line-1 w-5 h-0.5 bg-slate-800 rounded-full transition-all duration-300 transform -translate-y-1"></span>
+        <span class="line line-2 w-5 h-0.5 bg-slate-800 rounded-full transition-all duration-200"></span>
+        <span class="line line-3 w-5 h-0.5 bg-slate-800 rounded-full transition-all duration-300 transform translate-y-1"></span>
+      </button>
+
+      <!-- モバイル用フルスクリーンオーバーレイメニュー -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-white/95 backdrop-blur-2xl z-40 flex flex-col justify-between px-8 py-24 opacity-0 pointer-events-none transition-all duration-300 md:hidden"
+      >
+        <!-- 背景アクセント光彩 -->
+        <div class="absolute -top-20 -right-20 w-72 h-72 bg-blue-200/40 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-orange-200/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <nav class="relative z-10 flex flex-col space-y-6 text-left pt-6">
+          <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">MENU NAVIGATION</span>
+          
+          <a href="#statement" class="mobile-nav-link text-2xl font-black text-slate-900 hover:text-blue-600 transition flex items-center justify-between group">
+            <span>理念宣言</span>
+            <span class="text-xs font-mono text-slate-400 group-hover:text-blue-500">01</span>
+          </a>
+          <a href="#about" class="mobile-nav-link text-2xl font-black text-slate-900 hover:text-blue-600 transition flex items-center justify-between group">
+            <span>3つの柱</span>
+            <span class="text-xs font-mono text-slate-400 group-hover:text-blue-500">02</span>
+          </a>
+          <a href="#events" class="mobile-nav-link text-2xl font-black text-slate-900 hover:text-blue-600 transition flex items-center justify-between group">
+            <span>サミット日程</span>
+            <span class="text-xs font-mono text-slate-400 group-hover:text-blue-500">03</span>
+          </a>
+          <a href="#organizer" class="mobile-nav-link text-2xl font-black text-slate-900 hover:text-blue-600 transition flex items-center justify-between group">
+            <span>主催・運営体制</span>
+            <span class="text-xs font-mono text-slate-400 group-hover:text-blue-500">04</span>
+          </a>
+        </nav>
+
+        <!-- メニュー下部のSNS・公式アクション -->
+        <div class="relative z-10 pt-8 border-t border-slate-200/80 space-y-4">
+          <a
+            href="https://www.instagram.com/pred.studentsummit"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
+          >
+            <span>公式Instagramをチェック</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <p class="text-center text-[11px] text-slate-400 font-medium">
+            © 2026 全国生徒会防災サミット
+          </p>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -60,7 +123,7 @@ const logoPath = `${cleanBase}/logo.png`;
 
       <div class="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
         
-        <!-- 中央シンボルロゴ（四角い白背景を除去し、円形グラデーションのみ配置） -->
+        <!-- 中央シンボルロゴ -->
         <div class="relative flex items-center justify-center group">
           <div class="absolute -inset-4 bg-gradient-to-tr from-emerald-400 via-sky-400 to-orange-400 rounded-full blur-2xl opacity-40 group-hover:opacity-70 transition duration-500"></div>
           <img
@@ -283,3 +346,54 @@ const logoPath = `${cleanBase}/logo.png`;
     </div>
   </footer>
 </Layout>
+
+<!-- ハンバーガーメニュー開閉制御スクリプト -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+  const line1 = document.querySelector('.line-1');
+  const line2 = document.querySelector('.line-2');
+  const line3 = document.querySelector('.line-3');
+
+  let isOpen = false;
+
+  const toggleMenu = () => {
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      // 開いたとき
+      mobileMenu?.classList.remove('opacity-0', 'pointer-events-none');
+      mobileMenu?.classList.add('opacity-100', 'pointer-events-auto');
+      document.body.style.overflow = 'hidden'; // 背景スクロール禁止
+
+      // アイコンアニメーション (三本線 -> ×)
+      line1?.classList.add('rotate-45', 'translate-y-0.5');
+      line1?.classList.remove('-translate-y-1');
+      line2?.classList.add('opacity-0');
+      line3?.classList.add('-rotate-45', '-translate-y-0.5');
+      line3?.classList.remove('translate-y-1');
+    } else {
+      // 閉じたとき
+      mobileMenu?.classList.add('opacity-0', 'pointer-events-none');
+      mobileMenu?.classList.remove('opacity-100', 'pointer-events-auto');
+      document.body.style.overflow = ''; // スクロール復帰
+
+      // アイコンアニメーション (× -> 三本線)
+      line1?.classList.remove('rotate-45', 'translate-y-0.5');
+      line1?.classList.add('-translate-y-1');
+      line2?.classList.remove('opacity-0');
+      line3?.classList.remove('-rotate-45', '-translate-y-0.5');
+      line3?.classList.add('translate-y-1');
+    }
+  };
+
+  toggleBtn?.addEventListener('click', toggleMenu);
+
+  // リンクをタップしたときはメニューを自動で閉じる
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (isOpen) toggleMenu();
+    });
+  });
+</script>
