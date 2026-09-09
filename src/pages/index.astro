@@ -1,11 +1,159 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// src/pages/index.astro
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/summit/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2026 全国生徒会防災サミット 秋の陣</title>
+    <meta
+      name="description"
+      content="全国の学生が『自分たちの防災』を主体的に考え、実践するための交流・発信サミット。"
+    />
+  </head>
+  <body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-orange-500 selection:text-white">
+    <!-- ナビゲーションバー -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <span class="font-extrabold tracking-wider text-sm sm:text-base">
+          JYRAC <span class="text-orange-500">×</span> 東北生徒会連盟
+        </span>
+        <a
+          href="https://www.instagram.com/pred.studentsummit"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs font-semibold px-4 py-2 rounded-full border border-neutral-700 hover:border-orange-500 hover:text-orange-400 transition"
+        >
+          Instagram
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ヒーローセクション -->
+      <section class="relative overflow-hidden py-24 sm:py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-medium text-orange-400 mb-6">
+            <span class="inline-block w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+            2026.09.13 (Sun) オンライン開催
+          </div>
+          
+          <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight mb-4">
+            2026 全国生徒会防災サミット<br />
+            <span class="bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent">
+              秋の陣
+            </span>
+          </h1>
+
+          <p class="text-xl sm:text-2xl font-bold italic tracking-wide text-neutral-400 mb-8">
+            “ Think BIG, We’ll Go Further ”
+          </p>
+
+          <p class="max-w-2xl mx-auto text-sm sm:text-base text-neutral-300 leading-relaxed mb-10">
+            災害が起きたとき、動くのは誰だ？<br class="hidden sm:inline" />
+            「若い世代の力」なんて言われるけれど、本気でぶつかり合える場所はまだ足りてない。<br />
+            全国の中高生が集まり、「誰かの防災」から「僕らのリアル」へアップデートする2時間。
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="https://www.instagram.com/pred.studentsummit"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-8 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold transition duration-200 shadow-lg shadow-orange-500/20"
+            >
+              公式Instagramをチェック
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 開催概要・タイムテーブル -->
+      <section class="max-w-4xl mx-auto px-6 py-12 border-t border-neutral-900">
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- 開催概要カード -->
+          <div class="bg-neutral-900/60 border border-neutral-800 p-8 rounded-2xl backdrop-blur-sm">
+            <h2 class="text-xs font-bold tracking-widest text-orange-400 uppercase mb-4">Event Details</h2>
+            <h3 class="text-xl font-bold mb-6">開催概要</h3>
+
+            <dl class="space-y-4 text-sm">
+              <div class="border-b border-neutral-800/60 pb-3">
+                <dt class="text-neutral-500 text-xs mb-1">開催日時</dt>
+                <dd class="font-medium text-neutral-200">2026年9月13日（日） 17:00 〜 19:00</dd>
+              </div>
+              <div class="border-b border-neutral-800/60 pb-3">
+                <dt class="text-neutral-500 text-xs mb-1">会場</dt>
+                <dd class="font-medium text-neutral-200">Zoom（オンライン配信）</dd>
+              </div>
+              <div class="border-b border-neutral-800/60 pb-3">
+                <dt class="text-neutral-500 text-xs mb-1">対象</dt>
+                <dd class="font-medium text-neutral-200">全国の中学生・高校生・生徒会役員</dd>
+              </div>
+              <div>
+                <dt class="text-neutral-500 text-xs mb-1">主催 / 共催</dt>
+                <dd class="font-medium text-neutral-200">
+                  主催：JYRAC（日本若者防災復興協会）<br />
+                  共催：東北生徒会連盟
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- タイムテーブルカード -->
+          <div class="bg-neutral-900/60 border border-neutral-800 p-8 rounded-2xl backdrop-blur-sm flex flex-col justify-between">
+            <div>
+              <h2 class="text-xs font-bold tracking-widest text-orange-400 uppercase mb-4">Program Schedule</h2>
+              <h3 class="text-xl font-bold mb-6">タイムテーブル</h3>
+
+              <div class="space-y-4 text-sm relative before:absolute before:left-7 before:top-3 before:bottom-3 before:w-px before:bg-neutral-800">
+                <div class="flex items-start gap-4 relative">
+                  <span class="font-mono font-bold text-orange-400 bg-neutral-900 px-2 py-0.5 rounded border border-neutral-800 z-10">17:00</span>
+                  <div class="pt-0.5">
+                    <p class="font-semibold text-neutral-200">開会</p>
+                    <p class="text-xs text-neutral-500">オープニング・主旨説明</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4 relative">
+                  <span class="font-mono font-bold text-orange-400 bg-neutral-900 px-2 py-0.5 rounded border border-neutral-800 z-10">17:10</span>
+                  <div class="pt-0.5">
+                    <p class="font-semibold text-neutral-200">講演セッション</p>
+                    <p class="text-xs text-neutral-500">現場のリアルとこれからの防災</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4 relative">
+                  <span class="font-mono font-bold text-orange-400 bg-neutral-900 px-2 py-0.5 rounded border border-neutral-800 z-10">18:15</span>
+                  <div class="pt-0.5">
+                    <p class="font-semibold text-neutral-200">成果提案</p>
+                    <p class="text-xs text-neutral-500">参加者同士の共有・ディスカッション</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4 relative">
+                  <span class="font-mono font-bold text-orange-400 bg-neutral-900 px-2 py-0.5 rounded border border-neutral-800 z-10">18:50</span>
+                  <div class="pt-0.5">
+                    <p class="font-semibold text-neutral-200">閉会</p>
+                    <p class="text-xs text-neutral-500">クロージング</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-neutral-800 text-xs text-neutral-500">
+              ※プログラムは都合により一部変更となる場合があります。
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="border-t border-neutral-900 py-10 px-6 text-center text-xs text-neutral-500">
+      <p class="mb-2">© 2026 JYRAC / 東北生徒会連盟. All rights reserved.</p>
+      <p>Instagram: <a href="https://www.instagram.com/pred.studentsummit" class="text-neutral-400 hover:text-orange-400 underline">@pred.studentsummit</a></p>
+    </footer>
+  </body>
+</html>
