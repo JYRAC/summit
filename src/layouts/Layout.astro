@@ -11,11 +11,11 @@ const logoPath = `${cleanBase}/logo.png`;
   description="全国の中学生・高校生が地域と学校を越えて集い、次世代の防災スタンダードを創るプラットフォーム。"
 >
   <!-- ナビゲーションバー -->
-  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-slate-200/80 shadow-xs">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
       
       <!-- ロゴ＆タイトル -->
-      <a href={`${cleanBase}/`} class="flex items-center gap-2.5 sm:gap-3 no-underline group select-none min-w-0">
+      <a href={`${cleanBase}/`} class="flex items-center gap-2.5 sm:gap-3 no-underline group select-none min-w-0 z-[110]">
         <div class="relative flex items-center justify-center shrink-0">
           <div class="absolute -inset-1 bg-gradient-to-tr from-orange-400 via-sky-400 to-emerald-400 rounded-full blur-xs opacity-60 group-hover:opacity-100 transition duration-300"></div>
           <img
@@ -69,7 +69,7 @@ const logoPath = `${cleanBase}/logo.png`;
         id="menu-toggle"
         type="button"
         aria-label="メニューを開閉"
-        class="md:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-slate-200 shadow-xs active:scale-95 transition"
+        class="md:hidden relative z-[110] w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-slate-200 shadow-xs active:scale-95 transition"
       >
         <svg id="icon-open" class="w-5 h-5 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -79,30 +79,30 @@ const logoPath = `${cleanBase}/logo.png`;
         </svg>
       </button>
 
-      <!-- モバイル用フルスクリーンメニュー -->
+      <!-- モバイル用フルスクリーンメニュー（不透明度100%の白背景で透けを完全防止） -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-white/95 backdrop-blur-2xl z-40 flex flex-col justify-between px-6 py-20 hidden md:hidden overflow-y-auto"
+        class="fixed inset-0 bg-white z-[100] flex flex-col justify-between px-6 pt-24 pb-8 hidden md:hidden overflow-y-auto"
       >
-        <nav class="relative z-10 flex flex-col space-y-5 pt-4">
+        <nav class="relative z-10 flex flex-col space-y-4 pt-2">
           <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">MENU NAVIGATION</span>
-          <a href="#statement" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-2 border-b border-slate-100">
+          <a href="#statement" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
             <span>理念宣言</span>
             <span class="text-xs font-mono text-slate-400">01</span>
           </a>
-          <a href="#about" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-2 border-b border-slate-100">
+          <a href="#about" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
             <span>3つの柱</span>
             <span class="text-xs font-mono text-slate-400">02</span>
           </a>
-          <a href="#events" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-2 border-b border-slate-100">
+          <a href="#events" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
             <span>サミット日程</span>
             <span class="text-xs font-mono text-slate-400">03</span>
           </a>
-          <a href="#organizer" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-2 border-b border-slate-100">
+          <a href="#organizer" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
             <span>主催・運営体制</span>
             <span class="text-xs font-mono text-slate-400">04</span>
           </a>
-          <a href="#contact" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-2 border-b border-slate-100">
+          <a href="#contact" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
             <span>お問い合わせ</span>
             <span class="text-xs font-mono text-slate-400">05</span>
           </a>
@@ -221,7 +221,7 @@ const logoPath = `${cleanBase}/logo.png`;
       </div>
     </section>
 
-    <!-- 理念宣言（インライン統合で外部依存エラーを防止） -->
+    <!-- 理念宣言 -->
     <section id="statement" class="relative scroll-mt-20">
       <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white/90 backdrop-blur-md p-6 sm:p-14 border border-slate-200/90 shadow-xs">
         <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-400 via-blue-500 to-emerald-400"></div>
