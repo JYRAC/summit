@@ -12,96 +12,108 @@ const logoPath = `${cleanBase}/logo.png`;
   description="全国の中学生・高校生が地域と学校を越えて集い、次世代の防災スタンダードを創るプラットフォーム。"
 >
   <!-- ナビゲーションバー -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
-    <div class="max-w-6xl mx-auto px-6 h-18 flex items-center justify-between">
-      <!-- ロゴ -->
-      <a href={`${cleanBase}/`} class="flex items-center gap-3.5 group z-50">
-        <div class="relative flex items-center justify-center">
-          <div class="absolute -inset-1 bg-gradient-to-r from-orange-400 via-sky-400 to-emerald-400 rounded-full blur-xs opacity-50 group-hover:opacity-100 transition duration-300"></div>
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      
+      <!-- ロゴ＆タイトル -->
+      <a href={`${cleanBase}/`} class="flex items-center gap-3 no-underline group select-none">
+        <div class="relative flex items-center justify-center shrink-0">
+          <div class="absolute -inset-1 bg-gradient-to-tr from-orange-400 via-sky-400 to-emerald-400 rounded-full blur-xs opacity-60 group-hover:opacity-100 transition duration-300"></div>
           <img
             src={logoPath}
             alt="ロゴ"
-            class="relative w-9 h-9 object-contain rounded-full shadow-2xs"
+            class="relative w-10 h-10 object-contain rounded-full shadow-2xs"
           />
         </div>
         <div class="flex flex-col">
-          <span class="font-black text-slate-900 tracking-tight text-base sm:text-lg leading-none">
+          <span class="font-black text-slate-900 tracking-tight text-base sm:text-lg leading-tight group-hover:text-blue-600 transition">
             全国生徒会防災サミット
           </span>
-          <span class="text-[9px] font-black tracking-widest text-slate-400 uppercase mt-1">National Student Summit</span>
+          <span class="text-[9px] font-black tracking-widest text-slate-400 uppercase mt-0.5">National Student Summit</span>
         </div>
       </a>
 
-      <!-- PC用ナビゲーション -->
-      <nav class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-600">
-        <a href="#statement" class="hover:text-blue-600 transition">理念宣言</a>
-        <a href="#about" class="hover:text-blue-600 transition">3つの柱</a>
-        <a href="#events" class="hover:text-blue-600 transition">開催一覧</a>
-        <a href="#organizer" class="hover:text-blue-600 transition">運営体制</a>
+      <!-- PC用ナビゲーション（下線なし、ホバー背景付きのモダン仕様） -->
+      <nav class="hidden md:flex items-center gap-1.5 p-1.5 bg-slate-100/70 border border-slate-200/60 rounded-full backdrop-blur-md">
+        <a href="#statement" class="px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
+          理念宣言
+        </a>
+        <a href="#about" class="px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
+          3つの柱
+        </a>
+        <a href="#events" class="px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
+          開催一覧
+        </a>
+        <a href="#organizer" class="px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
+          運営体制
+        </a>
         <a
           href="https://www.instagram.com/pred.studentsummit"
           target="_blank"
           rel="noopener noreferrer"
-          class="px-4 py-2 rounded-full bg-slate-900 hover:bg-blue-600 text-white transition shadow-sm font-bold flex items-center gap-1.5"
+          class="ml-2 px-4 py-1.5 rounded-full bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold no-underline transition shadow-xs flex items-center gap-1"
         >
           <span>Instagram</span>
-          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </a>
       </nav>
 
-      <!-- モバイル用：洗練されたバーガーボタントグル -->
+      <!-- モバイル用バーガーメニューボタン（画面幅が狭い時に常時表示） -->
       <button
         id="menu-toggle"
         type="button"
-        aria-label="メニューを開く"
-        class="relative md:hidden z-50 w-11 h-11 flex flex-col justify-center items-center rounded-2xl bg-slate-100/80 hover:bg-slate-200/60 border border-slate-200/80 transition-all focus:outline-none"
+        aria-label="メニューを開閉"
+        class="md:hidden relative z-50 w-11 h-11 flex items-center justify-center rounded-2xl bg-white border border-slate-200 shadow-xs active:scale-95 transition"
       >
-        <span class="line line-1 w-5 h-0.5 bg-slate-800 rounded-full transition-all duration-300 transform -translate-y-1"></span>
-        <span class="line line-2 w-5 h-0.5 bg-slate-800 rounded-full transition-all duration-200"></span>
-        <span class="line line-3 w-5 h-0.5 bg-slate-800 rounded-full transition-all duration-300 transform translate-y-1"></span>
+        <!-- 開くアイコン（三本線） -->
+        <svg id="icon-open" class="w-6 h-6 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- 閉じるアイコン（×） -->
+        <svg id="icon-close" class="w-6 h-6 text-slate-800 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
       </button>
 
       <!-- モバイル用フルスクリーンオーバーレイメニュー -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-white/95 backdrop-blur-2xl z-40 flex flex-col justify-between px-8 py-24 opacity-0 pointer-events-none transition-all duration-300 md:hidden"
+        class="fixed inset-0 bg-white/95 backdrop-blur-2xl z-40 flex flex-col justify-between px-8 py-24 hidden md:hidden"
       >
-        <!-- 背景アクセント光彩 -->
         <div class="absolute -top-20 -right-20 w-72 h-72 bg-blue-200/40 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-orange-200/30 rounded-full blur-3xl pointer-events-none"></div>
 
-        <nav class="relative z-10 flex flex-col space-y-6 text-left pt-6">
+        <nav class="relative z-10 flex flex-col space-y-6 pt-6">
           <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">MENU NAVIGATION</span>
           
-          <a href="#statement" class="mobile-nav-link text-2xl font-black text-slate-900 hover:text-blue-600 transition flex items-center justify-between group">
+          <a href="#statement" class="mobile-nav-link text-2xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between">
             <span>理念宣言</span>
-            <span class="text-xs font-mono text-slate-400 group-hover:text-blue-500">01</span>
+            <span class="text-xs font-mono text-slate-400">01</span>
           </a>
-          <a href="#about" class="mobile-nav-link text-2xl font-black text-slate-900 hover:text-blue-600 transition flex items-center justify-between group">
+          <a href="#about" class="mobile-nav-link text-2xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between">
             <span>3つの柱</span>
-            <span class="text-xs font-mono text-slate-400 group-hover:text-blue-500">02</span>
+            <span class="text-xs font-mono text-slate-400">02</span>
           </a>
-          <a href="#events" class="mobile-nav-link text-2xl font-black text-slate-900 hover:text-blue-600 transition flex items-center justify-between group">
+          <a href="#events" class="mobile-nav-link text-2xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between">
             <span>サミット日程</span>
-            <span class="text-xs font-mono text-slate-400 group-hover:text-blue-500">03</span>
+            <span class="text-xs font-mono text-slate-400">03</span>
           </a>
-          <a href="#organizer" class="mobile-nav-link text-2xl font-black text-slate-900 hover:text-blue-600 transition flex items-center justify-between group">
+          <a href="#organizer" class="mobile-nav-link text-2xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between">
             <span>主催・運営体制</span>
-            <span class="text-xs font-mono text-slate-400 group-hover:text-blue-500">04</span>
+            <span class="text-xs font-mono text-slate-400">04</span>
           </a>
         </nav>
 
-        <!-- メニュー下部のSNS・公式アクション -->
         <div class="relative z-10 pt-8 border-t border-slate-200/80 space-y-4">
           <a
             href="https://www.instagram.com/pred.studentsummit"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
+            class="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm no-underline shadow-md flex items-center justify-center gap-2"
           >
-            <span>公式Instagramをチェック</span>
+            <span>公式Instagramを見る</span>
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -115,15 +127,11 @@ const logoPath = `${cleanBase}/logo.png`;
   </header>
 
   <main class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-36">
-    
     <!-- ヒーローセクション -->
     <section class="relative pt-6 sm:pt-12 pb-8 w-full">
-      <!-- 背景：ロゴ連動のオーロラカラーグラデーション -->
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-emerald-200/35 via-sky-200/40 to-orange-200/35 blur-3xl pointer-events-none -z-10 rounded-full"></div>
 
       <div class="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
-        
-        <!-- 中央シンボルロゴ -->
         <div class="relative flex items-center justify-center group">
           <div class="absolute -inset-4 bg-gradient-to-tr from-emerald-400 via-sky-400 to-orange-400 rounded-full blur-2xl opacity-40 group-hover:opacity-70 transition duration-500"></div>
           <img
@@ -133,7 +141,6 @@ const logoPath = `${cleanBase}/logo.png`;
           />
         </div>
 
-        <!-- キャッチコピーエリア -->
         <div class="space-y-4">
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-slate-200 text-blue-700 text-xs font-bold shadow-xs">
             <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
@@ -154,7 +161,6 @@ const logoPath = `${cleanBase}/logo.png`;
           </p>
         </div>
 
-        <!-- 特大イベントカード（次回開催フィーチャー） -->
         <div class="pt-4 w-full max-w-2xl mx-auto">
           <div class="relative overflow-hidden bg-white/95 rounded-3xl p-7 sm:p-9 border border-slate-200/90 shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
             <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-400 via-blue-500 to-emerald-400"></div>
@@ -181,12 +187,11 @@ const logoPath = `${cleanBase}/logo.png`;
                 </div>
               </div>
 
-              <!-- 立体CTAボタン -->
               <a
                 href="https://www.instagram.com/pred.studentsummit"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-2xl group shrink-0 w-full sm:w-auto"
+                class="relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-2xl group shrink-0 w-full sm:w-auto no-underline"
               >
                 <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-400 rounded-2xl blur-xs opacity-60 group-hover:opacity-100 transition duration-300"></span>
                 <span class="relative w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold shadow-md transition duration-200 group-hover:scale-[1.02] active:scale-[0.98]">
@@ -220,54 +225,39 @@ const logoPath = `${cleanBase}/logo.png`;
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <!-- 01: オレンジ -->
         <div class="relative bg-white p-8 rounded-3xl border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
           <div class="absolute top-0 left-0 right-0 h-1 bg-orange-500"></div>
           <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center font-black text-xl border border-orange-100">
-              01
-            </div>
+            <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center font-black text-xl border border-orange-100">01</div>
             <h3 class="text-xl font-bold text-slate-900">知見獲得</h3>
-            <p class="text-sm text-slate-600 leading-relaxed font-medium">
-              最前線で活動する専門家や被災地の現場を知るゲストから、教科書や避難訓練では学べない生きた知見を学びます。
-            </p>
+            <p class="text-sm text-slate-600 leading-relaxed font-medium">最前線で活動する専門家や被災地の現場を知るゲストから、教科書や避難訓練では学べない生きた知見を学びます。</p>
           </div>
           <span class="text-[11px] font-black tracking-widest text-orange-600 uppercase mt-6 block">KNOWLEDGE</span>
         </div>
 
-        <!-- 02: ブルー -->
         <div class="relative bg-white p-8 rounded-3xl border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
           <div class="absolute top-0 left-0 right-0 h-1 bg-blue-500"></div>
           <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-black text-xl border border-blue-100">
-              02
-            </div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-black text-xl border border-blue-100">02</div>
             <h3 class="text-xl font-bold text-slate-900">実践ワーク</h3>
-            <p class="text-sm text-slate-600 leading-relaxed font-medium">
-              被災状況や学校での避難所設営などを想定した実践的なシミュレーションを通して、身体で動ける対応力を養います。
-            </p>
+            <p class="text-sm text-slate-600 leading-relaxed font-medium">被災状況や学校での避難所設営などを想定した実践的なシミュレーションを通して、身体で動ける対応力を養います。</p>
           </div>
           <span class="text-[11px] font-black tracking-widest text-blue-600 uppercase mt-6 block">EXPERIENCE</span>
         </div>
 
-        <!-- 03: グリーン -->
         <div class="relative bg-white p-8 rounded-3xl border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
           <div class="absolute top-0 left-0 right-0 h-1 bg-emerald-500"></div>
           <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-xl border border-emerald-100">
-              03
-            </div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-xl border border-emerald-100">03</div>
             <h3 class="text-xl font-bold text-slate-900">議論・発信</h3>
-            <p class="text-sm text-slate-600 leading-relaxed font-medium">
-              学校や地域の枠を越え、互いの生徒会の取り組みやアイデアを持ち寄り共有。次世代からの提言を取りまとめます。
-            </p>
+            <p class="text-sm text-slate-600 leading-relaxed font-medium">学校や地域の枠を越え、互いの生徒会の取り組みやアイデアを持ち寄り共有。次世代からの提言を取りまとめます。</p>
           </div>
           <span class="text-[11px] font-black tracking-widest text-emerald-600 uppercase mt-6 block">DISCUSSION</span>
         </div>
       </div>
     </section>
 
-    <!-- 開催ラインナップ / イベント情報 -->
+    <!-- 開催一覧 -->
     <section id="events" class="space-y-8 scroll-mt-24">
       <div class="text-center space-y-3">
         <p class="text-xs font-black tracking-widest text-blue-600 uppercase">Schedule & Lineup</p>
@@ -275,7 +265,7 @@ const logoPath = `${cleanBase}/logo.png`;
       </div>
 
       <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-2xl bg-slate-50 border border-slate-100 gap-4 hover:border-blue-200 transition">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-2xl bg-slate-50 border border-slate-100 gap-4">
           <div class="space-y-1.5">
             <div class="flex items-center gap-2">
               <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-blue-100 text-blue-700">次回開催</span>
@@ -288,12 +278,11 @@ const logoPath = `${cleanBase}/logo.png`;
             href="https://www.instagram.com/pred.studentsummit"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:border-blue-500 hover:text-blue-600 text-slate-800 text-xs font-bold transition shadow-2xs shrink-0"
+            class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:border-blue-500 hover:text-blue-600 text-slate-800 text-xs font-bold transition shadow-2xs shrink-0 no-underline"
           >
             詳細・参加方法 →
           </a>
         </div>
-
         <div class="text-center py-3 text-xs text-slate-400 font-medium">
           ※次回以降の開催計画や地方ブロック別のセッションは順次SNS・本サイトにて告知します。
         </div>
@@ -317,7 +306,6 @@ const logoPath = `${cleanBase}/logo.png`;
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- フッター -->
@@ -337,7 +325,7 @@ const logoPath = `${cleanBase}/logo.png`;
           href="https://www.instagram.com/pred.studentsummit"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-slate-600 hover:text-blue-600 underline underline-offset-4 transition font-bold"
+          class="text-slate-600 hover:text-blue-600 no-underline font-bold"
         >
           公式Instagram: @pred.studentsummit
         </a>
@@ -347,53 +335,36 @@ const logoPath = `${cleanBase}/logo.png`;
   </footer>
 </Layout>
 
-<!-- ハンバーガーメニュー開閉制御スクリプト -->
+<!-- バーガーメニュー制御スクリプト -->
 <script>
   const toggleBtn = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
   const navLinks = document.querySelectorAll('.mobile-nav-link');
-  const line1 = document.querySelector('.line-1');
-  const line2 = document.querySelector('.line-2');
-  const line3 = document.querySelector('.line-3');
 
   let isOpen = false;
 
-  const toggleMenu = () => {
+  const toggle = () => {
     isOpen = !isOpen;
-
     if (isOpen) {
-      // 開いたとき
-      mobileMenu?.classList.remove('opacity-0', 'pointer-events-none');
-      mobileMenu?.classList.add('opacity-100', 'pointer-events-auto');
-      document.body.style.overflow = 'hidden'; // 背景スクロール禁止
-
-      // アイコンアニメーション (三本線 -> ×)
-      line1?.classList.add('rotate-45', 'translate-y-0.5');
-      line1?.classList.remove('-translate-y-1');
-      line2?.classList.add('opacity-0');
-      line3?.classList.add('-rotate-45', '-translate-y-0.5');
-      line3?.classList.remove('translate-y-1');
+      mobileMenu?.classList.remove('hidden');
+      iconOpen?.classList.add('hidden');
+      iconClose?.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     } else {
-      // 閉じたとき
-      mobileMenu?.classList.add('opacity-0', 'pointer-events-none');
-      mobileMenu?.classList.remove('opacity-100', 'pointer-events-auto');
-      document.body.style.overflow = ''; // スクロール復帰
-
-      // アイコンアニメーション (× -> 三本線)
-      line1?.classList.remove('rotate-45', 'translate-y-0.5');
-      line1?.classList.add('-translate-y-1');
-      line2?.classList.remove('opacity-0');
-      line3?.classList.remove('-rotate-45', '-translate-y-0.5');
-      line3?.classList.add('translate-y-1');
+      mobileMenu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+      document.body.style.overflow = '';
     }
   };
 
-  toggleBtn?.addEventListener('click', toggleMenu);
+  toggleBtn?.addEventListener('click', toggle);
 
-  // リンクをタップしたときはメニューを自動で閉じる
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      if (isOpen) toggleMenu();
+      if (isOpen) toggle();
     });
   });
 </script>
