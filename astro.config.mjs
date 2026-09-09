@@ -4,9 +4,9 @@ import unocss from 'unocss/astro';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jyrac.github.io',
-  base: '/summit',
+  site: 'https://summit.jyrac.stki.org',
   integrations: [
-    unocss(),
+    unocss({ mode: 'per-module' }),
   ],
 });
+
