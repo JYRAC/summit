@@ -33,6 +33,9 @@ const logoPath = `${cleanBase}/logo.png`;
 
       <!-- PC用ナビゲーション -->
       <nav class="hidden md:flex items-center gap-1.5 p-1.5 bg-slate-100/70 border border-slate-200/60 rounded-full backdrop-blur-md">
+        <a href="#statement" class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
+          理念
+        </a>
         <a href="#about" class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
           3つの柱
         </a>
@@ -74,21 +77,25 @@ const logoPath = `${cleanBase}/logo.png`;
         <span class="text-xs font-mono font-bold text-blue-600">“Think BIG, We’ll Go Further”</span>
       </div>
       
+      <a href="#statement" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
+        <span>理念（Core Philosophy）</span>
+        <span class="text-xs font-mono text-slate-400">01</span>
+      </a>
       <a href="#about" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
         <span>3つの柱</span>
-        <span class="text-xs font-mono text-slate-400">01</span>
+        <span class="text-xs font-mono text-slate-400">02</span>
       </a>
       <a href="#program" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
         <span>サミット開催日程</span>
-        <span class="text-xs font-mono text-slate-400">02</span>
+        <span class="text-xs font-mono text-slate-400">03</span>
       </a>
       <a href="#organizer" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
         <span>主催・運営体制</span>
-        <span class="text-xs font-mono text-slate-400">03</span>
+        <span class="text-xs font-mono text-slate-400">04</span>
       </a>
       <a href="#contact" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
         <span>お問い合わせ</span>
-        <span class="text-xs font-mono text-slate-400">04</span>
+        <span class="text-xs font-mono text-slate-400">05</span>
       </a>
     </nav>
 
@@ -260,6 +267,78 @@ const logoPath = `${cleanBase}/logo.png`;
             </div>
           </div>
 
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 理念（Core Philosophy）全文完全実装セクション -->
+    <section id="statement" class="space-y-6 sm:space-y-10 scroll-mt-20">
+      
+      <!-- 理念ヘッダー -->
+      <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white/95 backdrop-blur-md p-6 sm:p-12 border border-slate-200/90 shadow-xs text-left">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-400 via-blue-500 to-emerald-400"></div>
+
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-widest uppercase mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+          CORE PHILOSOPHY
+        </div>
+
+        <h2 class="text-xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-snug mb-4">
+          Resilience, Stewardship, and Cultivation
+        </h2>
+        
+        <p class="text-xs sm:text-base font-bold text-slate-700 leading-relaxed bg-slate-50 p-4 sm:p-5 rounded-xl border-l-4 border-blue-600">
+          — 私たちは、災害に対する強靭さ（Resilience）を持ち、学校と地域の未来を担う責任ある存在（Stewardship）として、防災を日常に根づかせる文化（Cultivation）を育てていきます。
+        </p>
+      </div>
+
+      <!-- 理念3要素の解説ブロック（原文全文） -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+        
+        <!-- 01 Resilience -->
+        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs flex flex-col justify-between overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-orange-500"></div>
+          <div class="space-y-3.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black font-mono tracking-widest text-orange-600 uppercase">PHILOSOPHY 01</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-orange-50 text-orange-700 border border-orange-100">強靭さ</span>
+            </div>
+            <h3 class="text-xl font-black text-slate-900 tracking-tight">Resilience</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+              全国生徒会防災サミットは、災害という不可避のリスクに対して、事後的に対応するのではなく、事前に備える力＝Resilienceを中高生自身が自らの手で高めていくことを目的としています。学校における防災教育は、多くの場合“受動的”な講義や訓練にとどまりがちですが、このサミットでは、生徒会という当事者が「主体的に企画し、提案し、実践する」経験を通じて、危機を想定し、それに向き合う“構え”を文化として定着させることを重視しています。自分たちの学校の課題に合わせてアイデアを出し合い、現実的なアクションへと落とし込むプロセスそのものが、未来への“しなやかな強さ”を育てるResilienceの実践なのです。
+            </p>
+          </div>
+        </div>
+
+        <!-- 02 Stewardship -->
+        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs flex flex-col justify-between overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-blue-500"></div>
+          <div class="space-y-3.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black font-mono tracking-widest text-blue-600 uppercase">PHILOSOPHY 02</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-100">責任と当事者性</span>
+            </div>
+            <h3 class="text-xl font-black text-slate-900 tracking-tight">Stewardship</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+              このサミットでは、生徒会が単なる行事運営の担い手ではなく、学校という共同体の「守り手」としての責任＝Stewardshipを果たす存在であることを明確に位置づけています。防災とは、教師や行政のみに委ねられるべきものではなく、生徒自身が「未来を預かる存在」として学校の安全や地域の持続性に関心を持ち、関与していくことが求められます。本サミットはその意識を育てる場であり、災害の発生に備えるだけでなく、災害後の支援・復興にどう関わるかという“責任の想像力”を培うことを目指しています。未来の学校・地域のために行動する――その自覚と倫理が、Stewardshipの核心にあります。
+            </p>
+          </div>
+        </div>
+
+        <!-- 03 Cultivation -->
+        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs flex flex-col justify-between overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-1 bg-emerald-500"></div>
+          <div class="space-y-3.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black font-mono tracking-widest text-emerald-600 uppercase">PHILOSOPHY 03</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-100">日常への定着</span>
+            </div>
+            <h3 class="text-xl font-black text-slate-900 tracking-tight">Cultivation</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+              防災を一過性の学習や行事ではなく、日常の文化として根づかせる営み＝Cultivationこそが、本サミットが最も重視する価値です。「防災の日」や避難訓練だけでは、防災意識は継続的に育ちません。そこで本サミットでは、参加者が自校の現実に即した企画を立案し、持ち帰って実践することで、学校ごとに防災文化を“耕し”、育てていく起点をつくることを意図しています。また、秋の「DAY4」開催や常設コミュニティの構想などを通じて、単発のイベントではなく継続的な対話と共有によって文化を更新し続ける仕組みを構築しています。Cultivationは、そうした長期的視野と内発的動機に根ざした“文化の創出”を象徴するキーワードです。
+            </p>
+          </div>
         </div>
 
       </div>
