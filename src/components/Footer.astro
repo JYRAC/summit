@@ -1,0 +1,38 @@
+---
+// src/components/Footer.astro
+const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
+const logoPath = `${cleanBase}/logo.png`;
+---
+
+<footer id="main-footer" class="mt-20 sm:mt-28 border-t border-slate-200/80 bg-white/70 py-10 sm:py-14 text-center text-xs text-slate-500 px-4">
+  <div class="max-w-5xl mx-auto space-y-3 sm:space-y-4">
+    <div class="flex justify-center mb-1">
+      <img
+        src={logoPath}
+        alt="生徒会防災サミット"
+        class="w-9 h-9 sm:w-10 sm:h-10 object-contain rounded-full opacity-80"
+      />
+    </div>
+    <p class="font-black text-slate-900 text-sm sm:text-base">生徒会防災サミット</p>
+    <p class="text-xs font-mono font-bold text-blue-600 tracking-wider">“Think BIG, We’ll Go Further”</p>
+    <p class="text-slate-500 font-medium text-[11px] sm:text-xs">主催：特定非営利活動法人日本若者防災復興協会（JYRAC）</p>
+    <div class="pt-1 flex justify-center items-center gap-4 sm:gap-6 text-xs">
+      <a
+        href="https://www.instagram.com/pred.studentsummit"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-slate-600 hover:text-blue-600 no-underline font-bold"
+      >
+        Instagram
+      </a>
+      <span class="text-slate-300">|</span>
+      <a
+        href={`${cleanBase}/contact`}
+        class="text-slate-600 hover:text-blue-600 no-underline font-bold"
+      >
+        お問い合わせ
+      </a>
+    </div>
+    <p class="text-slate-400 text-[10px] sm:text-[11px] pt-2">© 2026 特定非営利活動法人日本若者防災復興協会（JYRAC）. All rights reserved.</p>
+  </div>
+</footer>
