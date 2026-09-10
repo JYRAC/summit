@@ -1,119 +1,18 @@
 ---
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const logoPath = `${cleanBase}/logo.png`;
 ---
 
 <Layout title="生徒会防災サミット | Think BIG, We’ll Go Further" description="“Think BIG, We’ll Go Further” 全国の中学生・高校生が地域と学校を越えて集い、次世代の防災スタンダードを創るプラットフォーム。主催：特定非営利活動法人日本若者防災復興協会（JYRAC）">
-  <!-- ナビゲーションバー -->
-  <header class="sticky top-0 z-[120] bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-      
-      <!-- ロゴ＆タイトル -->
-      <a href={`${cleanBase}/`} class="flex items-center gap-2.5 sm:gap-3 no-underline group select-none min-w-0">
-        <div class="relative flex items-center justify-center shrink-0">
-          <div class="absolute -inset-1 bg-gradient-to-tr from-orange-400 via-sky-400 to-emerald-400 rounded-full blur-xs opacity-60 group-hover:opacity-100 transition duration-300"></div>
-          <img
-            src={logoPath}
-            alt="ロゴ"
-            class="relative w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-full shadow-2xs"
-          />
-        </div>
-        <div class="flex flex-col truncate">
-          <span class="font-black text-slate-900 tracking-tight text-sm sm:text-lg leading-tight group-hover:text-blue-600 transition truncate">
-            生徒会防災サミット
-          </span>
-          <span class="text-[8px] sm:text-[9px] font-black tracking-widest text-blue-600 uppercase mt-0.5 font-mono">
-            Think BIG, We’ll Go Further
-          </span>
-        </div>
-      </a>
-
-      <!-- PC用ナビゲーション -->
-      <nav class="hidden md:flex items-center gap-1.5 p-1.5 bg-slate-100/70 border border-slate-200/60 rounded-full backdrop-blur-md">
-        <a href="#statement" class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
-          理念
-        </a>
-        <a href="#about" class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
-          3つの柱
-        </a>
-        <a href="#program" class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
-          開催日程
-        </a>
-        <a href="#organizer" class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
-          運営体制
-        </a>
-        <a href="#contact" class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs">
-          お問い合わせ
-        </a>
-        <a href="https://www.instagram.com/pred.studentsummit" target="_blank" rel="noopener noreferrer"
-          class="ml-1 px-4 py-1.5 rounded-full bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold no-underline transition shadow-xs flex items-center gap-1">
-          <span>Instagram</span>
-          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
-      </nav>
-
-      <!-- モバイル用トグルボタン -->
-      <button id="menu-toggle" type="button" aria-label="メニューを開閉" class="md:hidden relative z-[130] w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-slate-200 shadow-xs active:scale-95 transition">
-        <svg id="icon-open" class="w-5 h-5 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg id="icon-close" class="w-5 h-5 text-slate-800 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-  </header>
-
-  <!-- モバイル用フルスクリーンメニュー -->
-  <div id="mobile-menu" class="fixed inset-0 w-full h-full z-[110] bg-white flex-col justify-between px-6 pt-24 pb-8 hidden md:hidden overflow-y-auto">
-    <nav class="flex flex-col space-y-4 pt-2">
-      <div class="flex flex-col space-y-1 pb-2 border-b border-slate-100">
-        <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">SLOGAN</span>
-        <span class="text-xs font-mono font-bold text-blue-600">“Think BIG, We’ll Go Further”</span>
-      </div>
-      
-      <a href="#statement" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
-        <span>理念（Core Philosophy）</span>
-        <span class="text-xs font-mono text-slate-400">01</span>
-      </a>
-      <a href="#about" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
-        <span>3つの柱</span>
-        <span class="text-xs font-mono text-slate-400">02</span>
-      </a>
-      <a href="#program" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
-        <span>サミット開催日程</span>
-        <span class="text-xs font-mono text-slate-400">03</span>
-      </a>
-      <a href="#organizer" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
-        <span>主催・運営体制</span>
-        <span class="text-xs font-mono text-slate-400">04</span>
-      </a>
-      <a href="#contact" class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
-        <span>お問い合わせ</span>
-        <span class="text-xs font-mono text-slate-400">05</span>
-      </a>
-    </nav>
-
-    <div class="pt-6 border-t border-slate-200 space-y-3">
-      <a href="https://www.instagram.com/pred.studentsummit" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm no-underline shadow-md flex items-center justify-center gap-2 active:scale-98 transition">
-        <span>公式Instagramを見る</span>
-        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
-      </a>
-      <p class="text-center text-[10px] text-slate-400 font-medium">
-        © 2026 全国生徒会防災サミット
-      </p>
-    </div>
-  </div>
+  <Header />
 
   <!-- メインコンテンツ -->
-  <main id="main-content" class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-16 space-y-20 sm:space-y-32 overflow-x-hidden">
+  <main id="main-content" class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-16 space-y-16 sm:space-y-24 overflow-x-hidden">
     
     <!-- ヒーローセクション -->
     <section class="relative pt-4 sm:pt-10 pb-4 w-full">
@@ -129,7 +28,6 @@ const logoPath = `${cleanBase}/logo.png`;
 
         <!-- キャッチコピー＆全体スローガン -->
         <div class="space-y-3 sm:space-y-4 px-2">
-          <!-- 全体スローガンバッジ -->
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-blue-200/80 shadow-xs">
             <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
             <span class="text-xs sm:text-sm font-black tracking-wide bg-gradient-to-r from-blue-700 to-indigo-700 bg-clip-text text-transparent font-mono">
@@ -151,17 +49,15 @@ const logoPath = `${cleanBase}/logo.png`;
           </p>
         </div>
 
-        <!-- サミット日程エリア（DAY 1 メイン + DAY 2・DAY 3 予告 + 本陣バナー） -->
-        <div id="program" class="pt-2 w-full max-w-3xl mx-auto scroll-mt-24 space-y-4">
-          
-          <!-- 9月特大イベントカード（DAY 1 メイン） -->
+        <!-- 直近イベントエリア（DAY 1 メインカード） -->
+        <div class="pt-2 w-full max-w-3xl mx-auto space-y-4">
           <div class="relative overflow-hidden bg-white/95 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-slate-200/90 shadow-[0_12px_36px_rgba(15,23,42,0.05)]">
             <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-400 via-blue-500 to-emerald-400"></div>
 
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 text-left">
               <div class="space-y-2">
                 <div class="flex items-center gap-2">
-                  <span class="px-2 py-0.5 rounded bg-slate-900 text-white text-[9px] sm:text-[10px] font-black tracking-widest uppercase">
+                  <span class="px-2 py-0.5 rounded bg-slate-900 text-white text-[9px] sm:text-[10px] font-black tracking-widest uppercase font-mono">
                     NEXT SUMMIT
                   </span>
                   <span class="text-[11px] sm:text-xs font-bold text-orange-600 bg-orange-50 px-2 py-0.5 rounded border border-orange-100">
@@ -182,7 +78,7 @@ const logoPath = `${cleanBase}/logo.png`;
                 </div>
               </div>
 
-              <!-- CTAボタン（DAY 1 詳細ページへ遷移） -->
+              <!-- CTAボタン -->
               <a href={`${cleanBase}/autumn/day1`} class="relative inline-flex items-center justify-center p-0.5 overflow-hidden rounded-xl sm:rounded-2xl group shrink-0 w-full sm:w-auto no-underline">
                 <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-400 rounded-xl sm:rounded-2xl blur-xs opacity-60 group-hover:opacity-100 transition duration-300"></span>
                 <span class="relative w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs sm:text-sm font-bold shadow-md transition duration-200 group-hover:scale-[1.02] active:scale-[0.98]">
@@ -194,9 +90,9 @@ const logoPath = `${cleanBase}/logo.png`;
               </a>
             </div>
 
-            <!-- DAY1 タイムテーブル（大枠のみの3構成） -->
+            <!-- DAY1 タイムテーブル概要 -->
             <div class="mt-6 pt-5 border-t border-slate-100 text-left space-y-3">
-              <span class="text-[11px] font-black tracking-wider text-slate-400 uppercase">DAY 1 PROGRAM / タイムテーブル</span>
+              <span class="text-[11px] font-black tracking-wider text-slate-400 uppercase font-mono">DAY 1 PROGRAM / タイムテーブル</span>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
                 <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
                   <span class="font-mono font-bold text-slate-500 text-[11px]">17:00 – 17:10</span>
@@ -216,385 +112,67 @@ const logoPath = `${cleanBase}/logo.png`;
               </div>
             </div>
 
-            <div class="mt-5 pt-3.5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[10px] sm:text-[11px] text-slate-400">
+            <div class="mt-5 pt-3.5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[10px] sm:text-[11px] text-slate-400 text-left">
               <span>主催：特定非営利活動法人日本若者防災復興協会（JYRAC）</span>
               <span>対象：全国の中学・高校生 / 参加費：無料</span>
             </div>
           </div>
-
-          <!-- 10月(DAY 2)・11月(DAY 3) 開催予告カード -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-            <!-- 10月予告: DAY 2 -->
-            <a href={`${cleanBase}/autumn/day2`} class="relative overflow-hidden rounded-2xl bg-white/85 hover:bg-white backdrop-blur-sm p-5 border border-dashed border-slate-300 hover:border-blue-400 shadow-xs flex flex-col justify-between space-y-3 no-underline group transition">
-              <div class="space-y-1.5">
-                <div class="flex items-center justify-between">
-                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-[10px] font-mono font-black">
-                    OCTOBER 2026
-                  </span>
-                  <span class="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider">
-                    Coming soon...
-                  </span>
-                </div>
-                <h4 class="font-black text-slate-900 group-hover:text-blue-600 transition text-sm">生徒会防災サミット2026 秋の陣 DAY２</h4>
-                <p class="text-[11px] text-slate-500 leading-relaxed">
-                  DAY 1の議論を受け、学校連携アクションや地域別プロジェクトを始動する実践セッション。
-                </p>
-              </div>
-              <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-medium">
-                <span class="text-blue-600 font-bold group-hover:underline">詳細・予告を見る →</span>
-                <span class="text-blue-600 font-bold font-mono">DAY 2</span>
-              </div>
-            </a>
-
-            <!-- 11月予告: DAY 3 -->
-            <a href={`${cleanBase}/autumn/day3`} class="relative overflow-hidden rounded-2xl bg-white/85 hover:bg-white backdrop-blur-sm p-5 border border-dashed border-slate-300 hover:border-indigo-400 shadow-xs flex flex-col justify-between space-y-3 no-underline group transition">
-              <div class="space-y-1.5">
-                <div class="flex items-center justify-between">
-                  <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 text-[10px] font-mono font-black">
-                    NOVEMBER 2026
-                  </span>
-                  <span class="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider">
-                    Coming soon...
-                  </span>
-                </div>
-                <h4 class="font-black text-slate-900 group-hover:text-indigo-600 transition text-sm">全国生徒会防災サミット2026 秋の陣 DAY３</h4>
-                <p class="text-[11px] text-slate-500 leading-relaxed">
-                  秋の陣の集大成。全国の中高生による実践成果の発表、社会への共同提言を取りまとめます。
-                </p>
-              </div>
-              <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-medium">
-                <span class="text-indigo-600 font-bold group-hover:underline">詳細・予告を見る →</span>
-                <span class="text-indigo-600 font-bold font-mono">DAY 3</span>
-              </div>
-            </a>
-          </div>
-
-          <!-- 本陣予告バナー：開催時期未定 -->
-          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500/10 via-orange-500/5 to-transparent border border-amber-200/80 p-5 text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div class="space-y-1">
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded bg-amber-600 text-white text-[9px] font-mono font-black tracking-wider uppercase">
-                  MAIN SUMMIT
-                </span>
-                <span class="text-[11px] font-bold text-amber-800">開催時期：未定（企画進行中）</span>
-              </div>
-              <h4 class="text-base font-black text-slate-900">生徒会防災サミット 本陣</h4>
-              <p class="text-xs text-slate-500">
-                秋の陣の全成果を結集する年次メインイベント。開催日程・詳細は決定次第発表します。
-              </p>
-            </div>
-            <a
-              href={`${cleanBase}/honjin`}
-              class="inline-flex items-center justify-center gap-1 px-4 py-2 rounded-xl bg-white border border-amber-300 text-amber-900 hover:text-blue-600 hover:border-blue-400 text-xs font-bold transition shrink-0 no-underline shadow-2xs"
-            >
-              <span>本陣の構想を見る →</span>
-            </a>
-          </div>
-
         </div>
 
       </div>
     </section>
 
-    <!-- 理念（Core Philosophy）セクション -->
-    <section id="statement" class="space-y-6 sm:space-y-10 scroll-mt-20">
-      
-      <!-- 理念ヘッダー -->
-      <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white/95 backdrop-blur-md p-6 sm:p-12 border border-slate-200/90 shadow-xs text-left">
-        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-400 via-blue-500 to-emerald-400"></div>
-
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-widest uppercase mb-4">
-          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-          CORE PHILOSOPHY
-        </div>
-
-        <h2 class="text-xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-snug mb-4">
-          Resilience, Stewardship, and Cultivation
-        </h2>
-        
-        <p class="text-xs sm:text-base font-bold text-slate-700 leading-relaxed bg-slate-50 p-4 sm:p-5 rounded-xl border-l-4 border-blue-600">
-          — 私たちは、災害に対する強靭さ（Resilience）を持ち、学校と地域の未来を担う責任ある存在（Stewardship）として、防災を日常に根づかせる文化（Cultivation）を育てていきます。
-        </p>
+    <!-- 各ページへのポータルナビゲーション -->
+    <section class="space-y-6 text-left">
+      <div class="border-b border-slate-200/80 pb-3">
+        <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">EXPLORE</span>
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">サミットについて知る</h2>
       </div>
 
-      <!-- 理念3要素の解説ブロック -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
-        
-        <!-- 01 Resilience -->
-        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs flex flex-col justify-between overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-orange-500"></div>
-          <div class="space-y-3.5">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-black font-mono tracking-widest text-orange-600 uppercase">PHILOSOPHY 01</span>
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-orange-50 text-orange-700 border border-orange-100">強靭さ</span>
-            </div>
-            <h3 class="text-xl font-black text-slate-900 tracking-tight">Resilience</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              全国生徒会防災サミットは、災害という不可避のリスクに対して、事後的に対応するのではなく、事前に備える力＝Resilienceを中高生自身が自らの手で高めていくことを目的としています。学校における防災教育は、多くの場合“受動的”な講義や訓練にとどまりがちですが、このサミットでは、生徒会という当事者が「主体的に企画し、提案し、実践する」経験を通じて、危機を想定し、それに向き合う“構え”を文化として定着させることを重視しています。自分たちの学校の課題に合わせてアイデアを出し合い、現実的なアクションへと落とし込むプロセスそのものが、未来への“しなやかな強さ”を育てるResilienceの実践なのです。
-            </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- 理念 -->
+        <a href={`${cleanBase}/philosophy`} class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 shadow-2xs no-underline group transition space-y-2 flex flex-col justify-between">
+          <div class="space-y-1.5">
+            <span class="text-[10px] font-mono font-bold text-orange-600">PHILOSOPHY</span>
+            <h3 class="font-black text-slate-900 group-hover:text-blue-600 transition text-base">理念</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Resilience, Stewardship, Cultivationの3つの指針。</p>
           </div>
-        </div>
+          <span class="text-xs font-bold text-blue-600 group-hover:underline">詳しく見る →</span>
+        </a>
 
-        <!-- 02 Stewardship -->
-        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs flex flex-col justify-between overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-blue-500"></div>
-          <div class="space-y-3.5">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-black font-mono tracking-widest text-blue-600 uppercase">PHILOSOPHY 02</span>
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-100">責任と当事者性</span>
-            </div>
-            <h3 class="text-xl font-black text-slate-900 tracking-tight">Stewardship</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              このサミットでは、生徒会が単なる行事運営の担い手ではなく、学校という共同体の「守り手」としての責任＝Stewardshipを果たす存在であることを明確に位置づけています。防災とは、教師や行政のみに委ねられるべきものではなく、生徒自身が「未来を預かる存在」として学校の安全や地域の持続性に関心を持ち、関与していくことが求められます。本サミットはその意識を育てる場であり、災害の発生に備えるだけでなく、災害後の支援・復興にどう関わるかという“責任の想像力”を培うことを目指しています。未来の学校・地域のために行動する――その自覚と倫理が、Stewardshipの核心にあります。
-            </p>
+        <!-- 3つの柱 -->
+        <a href={`${cleanBase}/pillars`} class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 shadow-2xs no-underline group transition space-y-2 flex flex-col justify-between">
+          <div class="space-y-1.5">
+            <span class="text-[10px] font-mono font-bold text-blue-600">VALUES</span>
+            <h3 class="font-black text-slate-900 group-hover:text-blue-600 transition text-base">3つの柱</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">インプット、実践体験、全国ディスカッションの3要素。</p>
           </div>
-        </div>
+          <span class="text-xs font-bold text-blue-600 group-hover:underline">詳しく見る →</span>
+        </a>
 
-        <!-- 03 Cultivation -->
-        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs flex flex-col justify-between overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-emerald-500"></div>
-          <div class="space-y-3.5">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-black font-mono tracking-widest text-emerald-600 uppercase">PHILOSOPHY 03</span>
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-100">日常への定着</span>
-            </div>
-            <h3 class="text-xl font-black text-slate-900 tracking-tight">Cultivation</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              防災を一過性の学習や行事ではなく、日常の文化として根づかせる営み＝Cultivationこそが、本サミットが最も重視する価値です。「防災の日」や避難訓練だけでは、防災意識は継続的に育ちません。そこで本サミットでは、参加者が自校の現実に即した企画を立案し、持ち帰って実践することで、学校ごとに防災文化を“耕し”、育てていく起点をつくることを意図しています。また、常設コミュニティの構想などを通じて、単発のイベントではなく継続的な対話と共有によって文化を更新し続ける仕組みを構築しています。Cultivationは、そうした長期的視野と内発的動機に根ざした“文化の創出”を象徴するキーワードです。
-            </p>
+        <!-- 開催日程 -->
+        <a href={`${cleanBase}/schedule`} class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 shadow-2xs no-underline group transition space-y-2 flex flex-col justify-between">
+          <div class="space-y-1.5">
+            <span class="text-[10px] font-mono font-bold text-indigo-600">SCHEDULE</span>
+            <h3 class="font-black text-slate-900 group-hover:text-blue-600 transition text-base">開催日程</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">秋の陣（DAY1〜3）および本陣のスケジュール一覧。</p>
           </div>
-        </div>
+          <span class="text-xs font-bold text-blue-600 group-hover:underline">詳しく見る →</span>
+        </a>
 
-      </div>
-    </section>
-
-    <!-- 3つの柱 (Mission) -->
-    <section id="about" class="space-y-8 sm:space-y-12 scroll-mt-20">
-      <div class="text-center space-y-2 sm:space-y-3 px-2">
-        <p class="text-[11px] sm:text-xs font-black tracking-widest text-blue-600 uppercase font-mono">Core Values</p>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-          3つの柱で育む、僕らの防災
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 max-w-md mx-auto">
-          ただ覚える避難訓練から、自ら動かすリアルなアクションへ。
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-        <!-- 01: 講演・知見 -->
-        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-orange-500"></div>
-          <div class="space-y-3 sm:space-y-4">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center font-black text-base sm:text-xl border border-orange-100">
-              01
-            </div>
-            <div>
-              <span class="text-[11px] font-bold text-orange-600">講演・インプット</span>
-              <h3 class="text-lg sm:text-xl font-black text-slate-900 mt-0.5">現場のリアルを知る</h3>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              最前線で動く専門家や被災地の現場を知るゲストから、教科書やマニュアルには絶対に載っていない「生きた知恵」をダイレクトに吸収します。
-            </p>
+        <!-- 運営体制 -->
+        <a href={`${cleanBase}/organizer`} class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 shadow-2xs no-underline group transition space-y-2 flex flex-col justify-between">
+          <div class="space-y-1.5">
+            <span class="text-[10px] font-mono font-bold text-slate-500">ORGANIZER</span>
+            <h3 class="font-black text-slate-900 group-hover:text-blue-600 transition text-base">主催・運営体制</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">特定非営利活動法人日本若者防災復興協会（JYRAC）について。</p>
           </div>
-          <span class="text-[10px] sm:text-[11px] font-black tracking-widest text-orange-600 uppercase mt-4 sm:mt-6 block font-mono">
-            01 / INPUT
-          </span>
-        </div>
-
-        <!-- 02: 体験・実践 -->
-        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-blue-500"></div>
-          <div class="space-y-3 sm:space-y-4">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-black text-base sm:text-xl border border-blue-100">
-              02
-            </div>
-            <div>
-              <span class="text-[11px] font-bold text-blue-600">体験・ワーク</span>
-              <h3 class="text-lg sm:text-xl font-black text-slate-900 mt-0.5">カラダで動くシミュレーション</h3>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              もし今、学校が避難所になったら？実際のシチュエーションを想定した体験型ワークショップで、現場で迷わず動けるリアルな対応力を養います。
-            </p>
-          </div>
-          <span class="text-[10px] sm:text-[11px] font-black tracking-widest text-blue-600 uppercase mt-4 sm:mt-6 block font-mono">
-            02 / ACTION
-          </span>
-        </div>
-
-        <!-- 03: 議論・発信 -->
-        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden">
-          <div class="absolute top-0 left-0 right-0 h-1 bg-emerald-500"></div>
-          <div class="space-y-3 sm:space-y-4">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-base sm:text-xl border border-emerald-100">
-              03
-            </div>
-            <div>
-              <span class="text-[11px] font-bold text-emerald-600">議論・発信</span>
-              <h3 class="text-lg sm:text-xl font-black text-slate-900 mt-0.5">全国の生徒会と本音で激論</h3>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              学校や地域のカベを越え、各地の生徒会同士でぶっちゃけトーク。互いの取り組みをシェアし、次世代から社会へ向けたアクション・提言をまとめます。
-            </p>
-          </div>
-          <span class="text-[10px] sm:text-[11px] font-black tracking-widest text-emerald-600 uppercase mt-4 sm:mt-6 block font-mono">
-            03 / CONNECT
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 主催組織 -->
-    <section id="organizer" class="space-y-6 sm:space-y-8 scroll-mt-20">
-      <div class="text-center space-y-2 sm:space-y-3 px-2">
-        <p class="text-[11px] sm:text-xs font-black tracking-widest text-slate-400 uppercase">Organizer</p>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight">主催組織</h2>
-      </div>
-
-      <div class="max-w-2xl mx-auto">
-        <div class="bg-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs space-y-3">
-          <span class="text-[11px] sm:text-xs font-black text-blue-600 tracking-wider uppercase">SUMMIT FOUNDER & ORGANIZER</span>
-          <h3 class="text-lg sm:text-xl font-black text-slate-900">特定非営利活動法人日本若者防災復興協会（JYRAC）</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            若者の力を結集し、次世代主導の防災教育・被災地支援・地域コミュニティのレジリエンス向上を推進するNPO法人。全国の学生ネットワークと共に、持続可能な防災アクションを形にしています。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- お問い合わせ（Contact）セクション -->
-    <section id="contact" class="space-y-6 sm:space-y-8 scroll-mt-20">
-      <div class="text-center space-y-2 sm:space-y-3 px-2">
-        <p class="text-[11px] sm:text-xs font-black tracking-widest text-blue-600 uppercase">Contact Us</p>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight">お問い合わせ</h2>
-        <p class="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto">
-          サミットへの参加相談、生徒会単位での連携、取材・協力のお問い合わせなど、下記窓口よりお気軽にご連絡ください。
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
-        <!-- 窓口1: 公式Instagram DM -->
-        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs flex flex-col justify-between space-y-5 hover:border-blue-300 transition duration-300">
-          <div class="space-y-2 sm:space-y-3">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-orange-50 to-pink-50 text-pink-600 flex items-center justify-center font-bold text-lg sm:text-xl border border-pink-100">
-              💬
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-slate-900">公式Instagram DM</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              中高生や生徒会役員の方からの参加エントリー、質問・相談はInstagramのダイレクトメッセージにて受け付けています。
-            </p>
-          </div>
-          <a
-            href="https://www.instagram.com/pred.studentsummit"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold no-underline transition shadow-xs"
-          >
-            <span>@pred.studentsummit へDM</span>
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
-
-        <!-- 窓口2: メール窓口 -->
-        <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs flex flex-col justify-between space-y-5 hover:border-blue-300 transition duration-300">
-          <div class="space-y-2 sm:space-y-3">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg sm:text-xl border border-blue-100">
-              ✉️
-            </div>
-            <h3 class="text-lg sm:text-xl font-bold text-slate-900">事務局メール窓口</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              学校関係者様、教職員様、メディア・報道関係者様、企業・自治体様からの取材依頼や連携相談は下記メール窓口へお寄せください。
-            </p>
-          </div>
-          <a
-            href="mailto:pred.studentsummit@gmail.com"
-            class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-slate-300 hover:border-blue-500 hover:text-blue-600 text-slate-800 text-xs font-bold no-underline transition shadow-2xs break-all"
-          >
-            <span>pred.studentsummit@gmail.com</span>
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </a>
-        </div>
+          <span class="text-xs font-bold text-blue-600 group-hover:underline">詳しく見る →</span>
+        </a>
       </div>
     </section>
 
   </main>
 
-  <!-- フッター -->
-  <footer id="main-footer" class="mt-20 sm:mt-28 border-t border-slate-200/80 bg-white/70 py-10 sm:py-14 text-center text-xs text-slate-500 px-4">
-    <div class="max-w-5xl mx-auto space-y-3 sm:space-y-4">
-      <div class="flex justify-center mb-1">
-        <img
-          src={logoPath}
-          alt="生徒会防災サミット"
-          class="w-9 h-9 sm:w-10 sm:h-10 object-contain rounded-full opacity-80"
-        />
-      </div>
-      <p class="font-black text-slate-900 text-sm sm:text-base">生徒会防災サミット</p>
-      <p class="text-xs font-mono font-bold text-blue-600 tracking-wider">“Think BIG, We’ll Go Further”</p>
-      <p class="text-slate-500 font-medium text-[11px] sm:text-xs">主催：特定非営利活動法人日本若者防災復興協会（JYRAC）</p>
-      <div class="pt-1 flex justify-center items-center gap-4 sm:gap-6 text-xs">
-        <a
-          href="https://www.instagram.com/pred.studentsummit"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-slate-600 hover:text-blue-600 no-underline font-bold"
-        >
-          Instagram
-        </a>
-        <span class="text-slate-300">|</span>
-        <a
-          href="#contact"
-          class="text-slate-600 hover:text-blue-600 no-underline font-bold"
-        >
-          お問い合わせ
-        </a>
-      </div>
-      <p class="text-slate-400 text-[10px] sm:text-[11px] pt-2">© 2026 特定非営利活動法人日本若者防災復興協会（JYRAC）. All rights reserved.</p>
-    </div>
-  </footer>
+  <Footer />
 </Layout>
-
-<!-- バーガーメニュー制御スクリプト -->
-<script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mainContent = document.getElementById('main-content');
-  const mainFooter = document.getElementById('main-footer');
-  const iconOpen = document.getElementById('icon-open');
-  const iconClose = document.getElementById('icon-close');
-  const navLinks = document.querySelectorAll('.mobile-nav-link');
-
-  let isOpen = false;
-
-  const toggle = () => {
-    isOpen = !isOpen;
-    if (isOpen) {
-      mobileMenu?.classList.remove('hidden');
-      mobileMenu?.classList.add('flex');
-      mainContent?.classList.add('hidden');
-      mainFooter?.classList.add('hidden');
-      iconOpen?.classList.add('hidden');
-      iconClose?.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    } else {
-      mobileMenu?.classList.add('hidden');
-      mobileMenu?.classList.remove('flex');
-      mainContent?.classList.remove('hidden');
-      mainFooter?.classList.remove('hidden');
-      iconOpen?.classList.remove('hidden');
-      iconClose?.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-  };
-
-  toggleBtn?.addEventListener('click', toggle);
-
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      if (isOpen) toggle();
-    });
-  });
-</script>
