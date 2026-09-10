@@ -9,7 +9,7 @@ const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const logoPath = `${cleanBase}/logo.png`;
 
 // BeholdのFeed ID（取得したものに置き換えてください）
-const BEHOLD_FEED_ID = "2xQc7A0wIFz3oCFXIkyx";
+const BEHOLD_FEED_ID = "YOUR_BEHOLD_FEED_ID";
 ---
 
 <Layout title="生徒会防災サミット | Think BIG, We’ll Go Further" description="“Think BIG, We’ll Go Further” 全国の中学生・高校生が地域と学校を越えて集い、次世代の防災スタンダードを創るプラットフォーム。主催：特定非営利活動法人日本若者防災復興協会（JYRAC）">
@@ -56,9 +56,42 @@ const BEHOLD_FEED_ID = "2xQc7A0wIFz3oCFXIkyx";
       </div>
     </section>
 
-    <!-- ★【最優先配置】お知らせ・活動報告リスト（最新5〜6件） ★ -->
-    <div class="w-full max-w-4xl mx-auto">
+    <!-- ★【最優先】最新情報エリア（noteお知らせ ＋ Instagram） ★ -->
+    <div class="w-full max-w-4xl mx-auto space-y-8 sm:space-y-10">
+      
+      <!-- 1. お知らせ・活動報告リスト（note） -->
       <NoteFeed />
+
+      <!-- 2. 公式Instagramフィード（お知らせのすぐ下に配置） -->
+      <section class="space-y-3 text-left">
+        <div class="flex items-center justify-between border-b border-slate-200/80 pb-2.5">
+          <div class="flex items-center gap-2.5">
+            <span class="w-2 h-2 rounded-full bg-pink-500"></span>
+            <h2 class="text-base sm:text-lg font-black text-slate-900 tracking-tight">
+              公式Instagram
+            </h2>
+            <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest hidden sm:inline">
+              OFFICIAL INSTAGRAM
+            </span>
+          </div>
+          <a
+            href="https://www.instagram.com/pred.studentsummit"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-pink-600 transition no-underline"
+          >
+            <span>@pred.studentsummit を開く</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="min-h-[220px] bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 border border-slate-200/80 shadow-xs">
+          <figure data-behold-id={BEHOLD_FEED_ID}></figure>
+        </div>
+      </section>
+
     </div>
 
     <!-- サミット日程エリア（DAY 1 メインカード + DAY 2・DAY 3 予告） -->
@@ -177,31 +210,6 @@ const BEHOLD_FEED_ID = "2xQc7A0wIFz3oCFXIkyx";
         </a>
       </div>
 
-    </section>
-
-    <!-- Behold: 公式Instagram -->
-    <section class="space-y-4 text-left max-w-4xl mx-auto">
-      <div class="flex items-end justify-between border-b border-slate-200/80 pb-3">
-        <div>
-          <span class="text-[10px] font-mono font-bold text-blue-600 uppercase tracking-widest">OFFICIAL INSTAGRAM</span>
-          <h2 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">公式Instagram</h2>
-        </div>
-        <a
-          href="https://www.instagram.com/pred.studentsummit"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-blue-600 transition no-underline"
-        >
-          <span>@pred.studentsummit を開く</span>
-          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
-      </div>
-
-      <div class="min-h-[220px] bg-white rounded-3xl p-3 sm:p-5 border border-slate-200/70 shadow-2xs">
-        <figure data-behold-id={BEHOLD_FEED_ID}></figure>
-      </div>
     </section>
 
     <!-- 各ページへのポータルナビゲーション -->
