@@ -3,21 +3,22 @@
 const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const logoPath = `${cleanBase}/logo.png`;
 
+// メニュー一覧（先頭にホームを追加）
 const navLinks = [
-  { name: '理念', href: `${cleanBase}/philosophy`, num: '01' },
-  { name: '3つの柱', href: `${cleanBase}/pillars`, num: '02' },
-  { name: '開催日程', href: `${cleanBase}/schedule`, num: '03' },
-  { name: '運営体制', href: `${cleanBase}/organizer`, num: '04' },
-  { name: 'お問い合わせ', href: `${cleanBase}/contact`, num: '05' },
+  { name: 'ホーム', href: `${cleanBase}/` },
+  { name: '理念', href: `${cleanBase}/philosophy` },
+  { name: '3つの柱', href: `${cleanBase}/pillars` },
+  { name: '開催日程', href: `${cleanBase}/schedule` },
+  { name: '運営体制', href: `${cleanBase}/organizer` },
+  { name: 'お問い合わせ', href: `${cleanBase}/contact` },
 ];
 ---
 
-<!-- ナビゲーションバー -->
-<header class="sticky top-0 z-[120] bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+<header class="sticky top-0 z-[100] w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
     
     <!-- ロゴ＆タイトル -->
-    <a href={`${cleanBase}/`} class="flex items-center gap-2.5 sm:gap-3 no-underline group select-none min-w-0">
+    <a href={`${cleanBase}/`} class="flex items-center gap-2 sm:gap-3 no-underline group select-none min-w-0 shrink">
       <div class="relative flex items-center justify-center shrink-0">
         <div class="absolute -inset-1 bg-gradient-to-tr from-orange-400 via-sky-400 to-emerald-400 rounded-full blur-xs opacity-60 group-hover:opacity-100 transition duration-300"></div>
         <img
@@ -26,22 +27,22 @@ const navLinks = [
           class="relative w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-full shadow-2xs"
         />
       </div>
-      <div class="flex flex-col truncate">
-        <span class="font-black text-slate-900 tracking-tight text-sm sm:text-lg leading-tight group-hover:text-blue-600 transition truncate">
+      <div class="flex flex-col truncate min-w-0">
+        <span class="font-black text-slate-900 tracking-tight text-xs sm:text-base md:text-lg leading-tight group-hover:text-blue-600 transition truncate">
           生徒会防災サミット
         </span>
-        <span class="text-[8px] sm:text-[9px] font-black tracking-widest text-blue-600 uppercase mt-0.5 font-mono">
+        <span class="text-[7px] sm:text-[9px] font-black tracking-widest text-blue-600 uppercase mt-0.5 font-mono truncate">
           Think BIG, We’ll Go Further
         </span>
       </div>
     </a>
 
-    <!-- PC用ナビゲーション -->
-    <nav class="hidden md:flex items-center gap-1.5 p-1.5 bg-slate-100/70 border border-slate-200/60 rounded-full backdrop-blur-md">
+    <!-- PC用ナビゲーション（md以上） -->
+    <nav class="hidden md:flex items-center gap-1 p-1.5 bg-slate-100/70 border border-slate-200/60 rounded-full backdrop-blur-md shrink-0">
       {navLinks.map((item) => (
         <a
           href={item.href}
-          class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs"
+          class="px-3 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-blue-600 hover:bg-white no-underline transition shadow-2xs"
         >
           {item.name}
         </a>
@@ -50,7 +51,7 @@ const navLinks = [
         href="https://www.instagram.com/pred.studentsummit"
         target="_blank"
         rel="noopener noreferrer"
-        class="ml-1 px-4 py-1.5 rounded-full bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold no-underline transition shadow-xs flex items-center gap-1"
+        class="ml-1 px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold no-underline transition shadow-xs flex items-center gap-1"
       >
         <span>Instagram</span>
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,8 +60,13 @@ const navLinks = [
       </a>
     </nav>
 
-    <!-- モバイル用トグルボタン -->
-    <button id="menu-toggle" type="button" aria-label="メニューを開閉" class="md:hidden relative z-[130] w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-slate-200 shadow-xs active:scale-95 transition">
+    <!-- モバイル用トグルボタン（md未満） -->
+    <button
+      id="menu-toggle"
+      type="button"
+      aria-label="メニューを開閉"
+      class="flex md:hidden relative z-[130] w-10 h-10 items-center justify-center rounded-xl bg-white border border-slate-200 shadow-xs active:scale-95 transition shrink-0"
+    >
       <svg id="icon-open" class="w-5 h-5 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -72,17 +78,20 @@ const navLinks = [
 </header>
 
 <!-- モバイル用フルスクリーンメニュー -->
-<div id="mobile-menu" class="fixed inset-0 w-full h-full z-[110] bg-white flex-col justify-between px-6 pt-24 pb-8 hidden md:hidden overflow-y-auto">
-  <nav class="flex flex-col space-y-4 pt-2">
+<div
+  id="mobile-menu"
+  class="fixed inset-0 w-full h-[100dvh] z-[110] bg-white flex-col justify-between px-6 pt-24 pb-8 hidden md:hidden overflow-y-auto"
+>
+  <nav class="flex flex-col space-y-2 pt-2">
     <div class="flex flex-col space-y-1 pb-2 border-b border-slate-100">
       <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase font-mono">SLOGAN</span>
       <span class="text-xs font-mono font-bold text-blue-600">“Think BIG, We’ll Go Further”</span>
     </div>
     
-    {navLinks.map((item) => (
-      <a href={item.href} class="mobile-nav-link text-xl font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-3 border-b border-slate-100">
+    {navLinks.map((item, idx) => (
+      <a href={item.href} class="mobile-nav-link text-lg font-black text-slate-900 no-underline hover:text-blue-600 transition flex items-center justify-between py-2 border-b border-slate-100">
         <span>{item.name}</span>
-        <span class="text-xs font-mono text-slate-400">{item.num}</span>
+        <span class="text-xs font-mono text-slate-400">{`0${idx}`}</span>
       </a>
     ))}
   </nav>
@@ -103,8 +112,6 @@ const navLinks = [
 <script>
   const toggleBtn = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  const mainContent = document.getElementById('main-content');
-  const mainFooter = document.getElementById('main-footer');
   const iconOpen = document.getElementById('icon-open');
   const iconClose = document.getElementById('icon-close');
   const navLinks = document.querySelectorAll('.mobile-nav-link');
@@ -116,16 +123,12 @@ const navLinks = [
     if (isOpen) {
       mobileMenu?.classList.remove('hidden');
       mobileMenu?.classList.add('flex');
-      mainContent?.classList.add('hidden');
-      mainFooter?.classList.add('hidden');
       iconOpen?.classList.add('hidden');
       iconClose?.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     } else {
       mobileMenu?.classList.add('hidden');
       mobileMenu?.classList.remove('flex');
-      mainContent?.classList.remove('hidden');
-      mainFooter?.classList.remove('hidden');
       iconOpen?.classList.remove('hidden');
       iconClose?.classList.add('hidden');
       document.body.style.overflow = '';
