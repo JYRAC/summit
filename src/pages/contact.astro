@@ -1,0 +1,80 @@
+---
+// src/pages/contact.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
+---
+
+<Layout title="お問い合わせ | 生徒会防災サミット" description="サミットへの参加相談、生徒会単位での連携、取材・協力のお問い合わせ窓口。">
+  <Header />
+
+  <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-8 text-left">
+    
+    <div class="text-center space-y-2 sm:space-y-3 px-2">
+      <p class="text-[11px] sm:text-xs font-black tracking-widest text-blue-600 uppercase font-mono">Contact Us</p>
+      <h1 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">お問い合わせ</h1>
+      <p class="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto">
+        サミットへの参加相談、生徒会単位での連携、取材・協力のお問い合わせなど、下記窓口よりお気軽にご連絡ください。
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <!-- 窓口1: 公式Instagram DM -->
+      <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs flex flex-col justify-between space-y-5 hover:border-blue-300 transition duration-300">
+        <div class="space-y-2 sm:space-y-3">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-orange-50 to-pink-50 text-pink-600 flex items-center justify-center font-bold text-lg sm:text-xl border border-pink-100">
+            💬
+          </div>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900">公式Instagram DM</h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            中高生や生徒会役員の方からの参加エントリー、質問・相談はInstagramのダイレクトメッセージにて受け付けています。
+          </p>
+        </div>
+        <a
+          href="https://www.instagram.com/pred.studentsummit"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold no-underline transition shadow-xs"
+        >
+          <span>@pred.studentsummit へDM</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- 窓口2: メール窓口 -->
+      <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs flex flex-col justify-between space-y-5 hover:border-blue-300 transition duration-300">
+        <div class="space-y-2 sm:space-y-3">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg sm:text-xl border border-blue-100">
+            ✉️
+          </div>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900">事務局メール窓口</h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            学校関係者様、教職員様、メディア・報道関係者様、企業・自治体様からの取材依頼や連携相談は下記メール窓口へお寄せください。
+          </p>
+        </div>
+        <a
+          href="mailto:pred.studentsummit@gmail.com"
+          class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-slate-300 hover:border-blue-500 hover:text-blue-600 text-slate-800 text-xs font-bold no-underline transition shadow-2xs break-all"
+        >
+          <span>pred.studentsummit@gmail.com</span>
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="pt-4 text-center">
+      <a href={`${cleanBase}/`} class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 no-underline transition">
+        <span>← トップページに戻る</span>
+      </a>
+    </div>
+
+  </main>
+
+  <Footer />
+</Layout>
