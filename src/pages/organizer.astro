@@ -6,6 +6,9 @@ import Footer from '../components/Footer.astro';
 
 const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const jyracAboutUrl = "https://jyrac.stki.org/about";
+
+// public/IMG_8325.jpg を団体ロゴとして指定
+const jyracLogoPath = `${cleanBase}/IMG_8325.jpg`;
 ---
 
 <Layout
@@ -14,9 +17,9 @@ const jyracAboutUrl = "https://jyrac.stki.org/about";
 >
   <Header />
 
-  <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-12 text-left">
+  <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-10 sm:space-y-14 text-left">
     
-    <!-- ページタイトル -->
+    <!-- ページ見出し -->
     <div class="text-center space-y-2">
       <p class="text-[11px] sm:text-xs font-black tracking-widest text-blue-600 uppercase font-mono">
         ORGANIZER & FOUNDER
@@ -29,37 +32,73 @@ const jyracAboutUrl = "https://jyrac.stki.org/about";
       </p>
     </div>
 
-    <!-- メイン紹介カード -->
-    <div class="relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xs space-y-6">
-      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+    <!-- メインカード：法人紹介 ＆ ロゴ・アイデンティティ -->
+    <div class="relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xs space-y-8">
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-400"></div>
 
-      <div class="space-y-3">
-        <span class="inline-block px-2.5 py-1 rounded bg-blue-50 text-blue-700 text-[11px] font-bold border border-blue-100 font-mono">
-          NPO CORPORATION
-        </span>
+      <!-- ① ロゴ ＆ シンボル解説セットブロック -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col md:flex-row items-center md:items-start gap-5 sm:gap-6">
+        <!-- ロゴ画像コンテナ -->
+        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white border border-slate-200 p-2.5 flex items-center justify-center shrink-0 shadow-2xs overflow-hidden">
+          <img
+            src={jyracLogoPath}
+            alt="特定非営利活動法人日本若者防災復興協会 ロゴマーク"
+            class="w-full h-full object-contain"
+          />
+        </div>
+
+        <!-- ロゴの説明・由来テキスト -->
+        <div class="space-y-2 text-center md:text-left">
+          <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+            <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-black font-mono tracking-wider uppercase">
+              SYMBOL IDENTITY
+            </span>
+            <span class="text-xs font-mono font-bold text-slate-500">
+              Japan Youth Resilience Action Consortium
+            </span>
+          </div>
+          <h3 class="text-base sm:text-lg font-black text-slate-900">
+            JYRAC シンボルマークに込めた想い
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            JYRAC（Japan Youth Resilience Action Consortium）のシンボルは、若者が持つしなやかなエネルギーと、全国をつなぐ強固なネットワークを象徴しています。<br class="hidden sm:inline" />
+            「災害に対してただ身を縮めて守られるのではなく、自らの手で未来の安全を切り拓く」という強い意思と連帯を表しています。
+          </p>
+        </div>
+      </div>
+
+      <!-- ② 法人の詳細説明 -->
+      <div class="space-y-3 pt-2 border-t border-slate-100">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded bg-slate-900 text-white text-[10px] font-mono font-black tracking-wider uppercase">
+            ORGANIZATION
+          </span>
+          <span class="text-xs font-bold text-slate-400">特定非営利活動法人（NPO法人）</span>
+        </div>
+
         <h2 class="text-xl sm:text-2xl font-black text-slate-900">
           特定非営利活動法人日本若者防災復興協会（JYRAC）
         </h2>
         <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-          若者の力を結集し、次世代主導の防災教育・被災地支援・地域コミュニティのレジリエンス（回復力・強靭性）向上を推進するNPO法人です。「守られる側から、動かす側へ」を共通の思想として掲げ、全国の学生ネットワークと共に持続可能な防災アクションを形にしています。
+          若者の力を結集し、次世代主導の防災教育・被災地支援・地域コミュニティのレジリエンス（回復力・強靭性）向上を推進するNPO法人です。「守られる側から、動かす側へ」を共通の思想として掲げ、全国の中学生・高校生・大学生ネットワークと共に持続可能な防災アクションを形にしています。
         </p>
       </div>
 
-      <!-- 法人のコアミッション -->
+      <!-- ③ 3つの活動軸 -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
         <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/60 space-y-1.5">
           <span class="text-xs font-bold text-blue-600 font-mono">01 / EDUCATION</span>
           <div class="font-bold text-slate-900 text-sm">次世代防災教育</div>
           <p class="text-[11px] text-slate-500 leading-snug">
-            教科書通りの講義にとどまらず、実践的シミュレーションやゲーム開発を通じた主体的学びを提供。
+            受動的な避難訓練を超え、実践シミュレーションや独自教材を通じた主体的学びを提供。
           </p>
         </div>
 
         <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/60 space-y-1.5">
           <span class="text-xs font-bold text-indigo-600 font-mono">02 / NETWORK</span>
-          <div class="font-bold text-slate-900 text-sm">学生ネットワーク構築</div>
+          <div class="font-bold text-slate-900 text-sm">全国学生ネットワーク</div>
           <p class="text-[11px] text-slate-500 leading-snug">
-            学校や地域の垣根を越え、全国の中学・高校・大学の有志が平時からつながる共助の基盤づくり。
+            学校や地域の垣根を越え、全国の生徒会・有志が平時からつながる共助の基盤づくり。
           </p>
         </div>
 
@@ -67,16 +106,16 @@ const jyracAboutUrl = "https://jyrac.stki.org/about";
           <span class="text-xs font-bold text-emerald-600 font-mono">03 / ACTION</span>
           <div class="font-bold text-slate-900 text-sm">現場密着の実践・支援</div>
           <p class="text-[11px] text-slate-500 leading-snug">
-            被災地での支援活動や地域コミュニティとの対話を通じて、リアルな教訓を未来のアクションへ還元。
+            被災地での支援活動や地域コミュニティとの対話を通じて、リアルな教訓を未来へ還元。
           </p>
         </div>
       </div>
 
-      <!-- 公式サイトへのリンクバナー -->
+      <!-- ④ 公式サイト導線バナー -->
       <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-blue-50/50 border border-blue-100">
-        <div class="space-y-0.5 text-left">
-          <div class="text-xs sm:text-sm font-bold text-slate-800">法人概要・活動実績の詳細は公式Webサイトへ</div>
-          <p class="text-[11px] text-slate-500">定款、理事名簿、過去のプロジェクト報告書をご覧いただけます。</p>
+        <div class="space-y-0.5 text-center sm:text-left">
+          <div class="text-xs sm:text-sm font-bold text-slate-800">法人概要・定款・活動実績は公式サイトへ</div>
+          <p class="text-[11px] text-slate-500">理事名簿、設立認証情報、各種プロジェクト詳細をご覧いただけます。</p>
         </div>
         <a
           href={jyracAboutUrl}
@@ -92,7 +131,7 @@ const jyracAboutUrl = "https://jyrac.stki.org/about";
       </div>
     </div>
 
-    <!-- 団体概要テーブル -->
+    <!-- 団体概要スペック表 -->
     <div class="space-y-4">
       <h2 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
         法人概要
@@ -105,12 +144,16 @@ const jyracAboutUrl = "https://jyrac.stki.org/about";
             <dd class="sm:col-span-2 font-semibold text-slate-900">特定非営利活動法人日本若者防災復興協会（JYRAC）</dd>
           </div>
           <div class="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4 bg-slate-50/50">
-            <dt class="font-bold text-slate-500">事業内容</dt>
-            <dd class="sm:col-span-2 text-slate-700 leading-relaxed font-medium">
-              防災教育の企画・運営、全国生徒会防災サミットの主催、被災地復興支援、学生防災コミュニティの運営、調査・政策提言
-            </dd>
+            <dt class="font-bold text-slate-500">英語表記</dt>
+            <dd class="sm:col-span-2 font-semibold text-slate-900 font-mono">Japan Youth Resilience Action Consortium</dd>
           </div>
           <div class="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4">
+            <dt class="font-bold text-slate-500">主な活動内容</dt>
+            <dd class="sm:col-span-2 text-slate-700 leading-relaxed font-medium">
+              防災教育の企画・運営、生徒会防災サミットの主催、被災地復興支援、学生防災ネットワークの形成、政策提言活動
+            </dd>
+          </div>
+          <div class="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-4 bg-slate-50/50">
             <dt class="font-bold text-slate-500">お問い合わせ</dt>
             <dd class="sm:col-span-2 text-slate-700 font-mono">
               <a href="mailto:pred.studentsummit@gmail.com" class="text-blue-600 hover:underline">pred.studentsummit@gmail.com</a>
