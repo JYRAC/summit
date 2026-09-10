@@ -1,0 +1,96 @@
+---
+// src/pages/pillars.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
+---
+
+<Layout title="3つの柱 | 生徒会防災サミット" description="講演・実践・議論。3つの柱で育む、僕らの防災。">
+  <Header />
+
+  <main id="main-content" class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-10 sm:space-y-14 text-left">
+    
+    <div class="text-center space-y-2 sm:space-y-3 px-2">
+      <p class="text-[11px] sm:text-xs font-black tracking-widest text-blue-600 uppercase font-mono">Core Values</p>
+      <h1 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+        3つの柱で育む、僕らの防災
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-500 max-w-md mx-auto">
+        ただ覚える避難訓練から、自ら動かすリアルなアクションへ。
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+      <!-- 01: 講演・知見 -->
+      <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-orange-500"></div>
+        <div class="space-y-3 sm:space-y-4">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center font-black text-base sm:text-xl border border-orange-100">
+            01
+          </div>
+          <div>
+            <span class="text-[11px] font-bold text-orange-600">講演・インプット</span>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900 mt-0.5">現場のリアルを知る</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            最前線で動く専門家や被災地の現場を知るゲストから、教科書やマニュアルには絶対に載っていない「生きた知恵」をダイレクトに吸収します。
+          </p>
+        </div>
+        <span class="text-[10px] sm:text-[11px] font-black tracking-widest text-orange-600 uppercase mt-4 sm:mt-6 block font-mono">
+          01 / INPUT
+        </span>
+      </div>
+
+      <!-- 02: 体験・実践 -->
+      <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-blue-500"></div>
+        <div class="space-y-3 sm:space-y-4">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-black text-base sm:text-xl border border-blue-100">
+            02
+          </div>
+          <div>
+            <span class="text-[11px] font-bold text-blue-600">体験・ワーク</span>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900 mt-0.5">カラダで動くシミュレーション</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            もし今、学校が避難所になったら？実際のシチュエーションを想定した体験型ワークショップで、現場で迷わず動けるリアルな対応力を養います。
+          </p>
+        </div>
+        <span class="text-[10px] sm:text-[11px] font-black tracking-widest text-blue-600 uppercase mt-4 sm:mt-6 block font-mono">
+          02 / ACTION
+        </span>
+      </div>
+
+      <!-- 03: 議論・発信 -->
+      <div class="relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-emerald-500"></div>
+        <div class="space-y-3 sm:space-y-4">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-base sm:text-xl border border-emerald-100">
+            03
+          </div>
+          <div>
+            <span class="text-[11px] font-bold text-emerald-600">議論・発信</span>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900 mt-0.5">全国の生徒会と本音で激論</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            学校や地域のカベを越え、各地の生徒会同士でぶっちゃけトーク。互いの取り組みをシェアし、次世代から社会へ向けたアクション・提言をまとめます。
+          </p>
+        </div>
+        <span class="text-[10px] sm:text-[11px] font-black tracking-widest text-emerald-600 uppercase mt-4 sm:mt-6 block font-mono">
+          03 / CONNECT
+        </span>
+      </div>
+    </div>
+
+    <div class="pt-4 text-center">
+      <a href={`${cleanBase}/`} class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-blue-600 no-underline transition">
+        <span>← トップページに戻る</span>
+      </a>
+    </div>
+
+  </main>
+
+  <Footer />
+</Layout>
