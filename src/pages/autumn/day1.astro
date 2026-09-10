@@ -1,0 +1,203 @@
+---
+// src/pages/autumn/day1.astro
+import Layout from '../../layouts/Layout.astro';
+
+const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
+const logoPath = `${cleanBase}/logo.png`;
+---
+
+<Layout
+  title="9月度 秋の陣 DAY 1 | 全国生徒会防災サミット2026"
+  description="2026年9月13日(日)開催。全国生徒会防災サミット2026 秋の陣 DAY１。新潟大学 卜部厚志教授による講演会、オリジナル防災ゲーム「HUG Gioco」、地域別グループディスカッションを実施！"
+>
+  <!-- ナビゲーションバー -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href={`${cleanBase}/`} class="flex items-center gap-2.5 sm:gap-3 no-underline group select-none">
+        <img src={logoPath} alt="ロゴ" class="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-full shadow-2xs" />
+        <div class="flex flex-col">
+          <span class="font-black text-slate-900 tracking-tight text-sm sm:text-base group-hover:text-blue-600 transition">
+            全国生徒会防災サミット
+          </span>
+          <span class="text-[8px] sm:text-[9px] font-black tracking-widest text-blue-600 uppercase font-mono">
+            Think BIG, We’ll Go Further
+          </span>
+        </div>
+      </a>
+      <a
+        href={`${cleanBase}/`}
+        class="inline-flex items-center gap-1 text-xs font-bold text-slate-600 hover:text-blue-600 no-underline px-3 py-1.5 rounded-lg border border-slate-200 hover:border-blue-400 transition"
+      >
+        <span>← トップに戻る</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-12">
+    
+    <!-- ヘッダーカード -->
+    <div class="relative overflow-hidden bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-5 text-left">
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-400 via-blue-500 to-emerald-400"></div>
+      
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="px-2.5 py-1 rounded bg-slate-900 text-white text-[10px] font-mono font-black tracking-wider uppercase">
+          DAY 1 / 秋の陣
+        </span>
+        <span class="px-2.5 py-1 rounded bg-orange-50 text-orange-600 text-[11px] font-bold border border-orange-100">
+          エントリー受付中
+        </span>
+      </div>
+
+      <div class="space-y-1">
+        <span class="text-xs font-mono font-bold text-blue-600">～Think BIG, We’ll Go Further～</span>
+        <h1 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+          全国生徒会防災サミット 9月度 秋の陣 DAY１
+        </h1>
+      </div>
+
+      <p class="text-xs sm:text-base text-slate-600 leading-relaxed font-medium">
+        新潟大学 災害・復興科学研究所の卜部教授による生きた知見の講演会からスタート！<br class="hidden sm:inline" />
+        後半はJYRACオリジナル防災ゲーム「HUG Gioco」や、全国の中高生が地域を越えて本音で語り合うグループディスカッションを実施します。
+      </p>
+
+      <!-- 開催概要リスト -->
+      <div class="pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-slate-700">
+        <div>📅 <strong>日時：</strong>2026年9月13日(日) 17:00–18:50</div>
+        <div>💻 <strong>会場：</strong>Zoom（オンライン）</div>
+        <div>👥 <strong>対象：</strong>全国の中学生・高校生（生徒会・有志）</div>
+        <div>🎫 <strong>参加費：</strong>無料</div>
+      </div>
+
+      <div class="pt-2">
+        <a
+          href="https://www.instagram.com/pred.studentsummit"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm no-underline shadow-md hover:scale-[1.02] active:scale-[0.98] transition"
+        >
+          <span>公式Instagramから参加エントリー</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- タイムテーブル -->
+    <div class="space-y-6 text-left">
+      <div class="space-y-1">
+        <span class="text-xs font-mono font-bold text-blue-600 tracking-wider uppercase">TIMETABLE</span>
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+          当日のスケジュール
+        </h2>
+      </div>
+
+      <div class="space-y-3">
+        <!-- 17:00 開会 -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+          <div class="font-mono font-bold text-blue-600 text-sm w-28 shrink-0">17:00 – 17:10</div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-base">開会・開会の言葉</h3>
+            <p class="text-xs text-slate-500">実行委員長：梁川 正光</p>
+          </div>
+        </div>
+
+        <!-- 17:10 講演会 -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-white border border-blue-200 shadow-xs flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
+          <div class="font-mono font-bold text-blue-600 text-sm w-28 shrink-0 sm:pt-0.5">17:10 – 18:15</div>
+          <div class="space-y-1.5">
+            <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-bold">特別講演</span>
+            <h3 class="font-bold text-slate-900 text-base sm:text-lg">
+              「地域と防災について」講演会＆質疑応答
+            </h3>
+            <p class="text-xs text-slate-600 font-semibold">
+              講師：新潟大学 災害・復興科学研究所 卜部厚志 教授
+            </p>
+            <p class="text-xs text-slate-500">
+              講演時間 約45〜55分 ＋ 参加中高生との質疑応答10分。現場の第一線から地域防災のリアルを学びます。
+            </p>
+          </div>
+        </div>
+
+        <!-- 18:15 グループディスカッション -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
+          <div class="font-mono font-bold text-indigo-600 text-sm w-28 shrink-0 sm:pt-0.5">18:15 – 18:45</div>
+          <div class="space-y-1.5">
+            <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">ワーク＆対話</span>
+            <h3 class="font-bold text-slate-900 text-base">
+              グループディスカッション（ブレイクアウトルーム）
+            </h3>
+            <p class="text-xs text-slate-500">
+              極力地域別に分かれ、JYRACオリジナル防災ゲームや「理想の街」についてのディスカッションを展開。
+            </p>
+          </div>
+        </div>
+
+        <!-- 18:45 閉会 -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+          <div class="font-mono font-bold text-slate-500 text-sm w-28 shrink-0">18:45 – 18:50</div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-base">閉会の言葉・閉会</h3>
+            <p class="text-xs text-slate-500">JYRAC理事長：久保 壮太郎 ｜ 18:50 終了予定</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- グループディスカッション内企画（簡単に紹介） -->
+    <div class="space-y-6 text-left">
+      <div class="space-y-1">
+        <span class="text-xs font-mono font-bold text-emerald-600 tracking-wider uppercase">WORKSHOP & TOPICS</span>
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+          グループディスカッションの注目企画
+        </h2>
+        <p class="text-xs text-slate-500">Zoomのブレイクアウトルームを使い、全国の仲間と本音で話し合います。</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- 企画1: 防災ゲーム -->
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
+          <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center font-bold text-lg border border-orange-100">
+            🎲
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">
+            防災ゲーム「HUG Gioco」
+          </h3>
+          <p class="text-xs text-slate-500 leading-relaxed font-medium">
+            JYRACオリジナルの避難所運営・シミュレーションゲーム。状況に応じた迅速な判断力をチームで体験しながら養います。
+          </p>
+        </div>
+
+        <!-- 企画2: 理想の街ディスカッション -->
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-lg border border-emerald-100">
+            🏙️
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">
+            自分が思う「理想の街」について
+          </h3>
+          <p class="text-xs text-slate-500 leading-relaxed font-medium">
+            以下のテーマなどを切り口に、学校や街の防災課題について語り合います：
+          </p>
+          <ul class="text-xs text-slate-600 space-y-1 pl-4 list-disc font-medium">
+            <li>今の自分の街のリアルな課題は？</li>
+            <li>学校から帰れなくなったらどうする？</li>
+            <li>あなたが地元の防災責任者になったら何をしたい？</li>
+            <li>あなたの地域だからこそできる防災とは？</li>
+            <li>ペットと一緒に避難できる街をつくるには？</li>
+            <li>だれもが避難しやすい町にするためのアイデア</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- お問い合わせ・戻る導線 -->
+    <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>主催：特定非営利活動法人日本若者防災復興協会（JYRAC）</p>
+      <a href={`${cleanBase}/`} class="text-blue-600 font-bold hover:underline">
+        トップページに戻る →
+      </a>
+    </div>
+
+  </main>
+</Layout>
