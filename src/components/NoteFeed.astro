@@ -1,0 +1,141 @@
+---
+// src/components/NoteFeed.astro
+const MAGAZINE_URL = "https://note.com/jyrac_official/m/m356b681c3cfd";
+const RSS_URL = `${MAGAZINE_URL}/rss`;
+---
+
+<section class="space-y-4 text-left" id="note-section">
+  <!-- セクションヘッダー -->
+  <div class="flex items-end justify-between border-b border-slate-200/80 pb-3">
+    <div>
+      <span class="text-[10px] font-mono font-bold text-emerald-600 uppercase tracking-widest">OFFICIAL COLUMN</span>
+      <h2 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">生徒会防災コラム（note）</h2>
+    </div>
+    <a
+      href={MAGAZINE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-emerald-600 transition no-underline"
+    >
+      <span>マガジン一覧を見る</span>
+      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- 記事一覧コンテナ（JSでNoteCardと同デザインのHTMLを自動注入） -->
+  <div id="note-articles-container" class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+    <!-- 読み込み中スケルトンUI -->
+    <div class="bg-white rounded-3xl border border-slate-200 p-0 overflow-hidden animate-pulse">
+      <div class="aspect-video w-full bg-slate-200"></div>
+      <div class="p-6 space-y-3">
+        <div class="h-3 bg-slate-200 rounded w-1/3"></div>
+        <div class="h-4 bg-slate-200 rounded w-full"></div>
+        <div class="h-4 bg-slate-200 rounded w-2/3"></div>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl border border-slate-200 p-0 overflow-hidden animate-pulse hidden sm:block">
+      <div class="aspect-video w-full bg-slate-200"></div>
+      <div class="p-6 space-y-3">
+        <div class="h-3 bg-slate-200 rounded w-1/3"></div>
+        <div class="h-4 bg-slate-200 rounded w-full"></div>
+        <div class="h-4 bg-slate-200 rounded w-2/3"></div>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl border border-slate-200 p-0 overflow-hidden animate-pulse hidden sm:block">
+      <div class="aspect-video w-full bg-slate-200"></div>
+      <div class="p-6 space-y-3">
+        <div class="h-3 bg-slate-200 rounded w-1/3"></div>
+        <div class="h-4 bg-slate-200 rounded w-full"></div>
+        <div class="h-4 bg-slate-200 rounded w-2/3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- クライアントサイド自動取得スクリプト -->
+<script define:vars={{ RSS_URL, MAGAZINE_URL }}>
+  async function loadNoteArticles() {
+    const container = document.getElementById('note-articles-container');
+    if (!container) return;
+
+    try {
+      const endpoint = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
+      const res = await fetch(endpoint);
+      const data = await res.json();
+
+      if (data.status === 'ok' && data.items && data.items.length > 0) {
+        const latestItems = data.items.slice(0, 3);
+
+        container.innerHTML = latestItems.map(item => {
+          // 日付整形
+          const d = new Date(item.pubDate);
+          const dateStr = !isNaN(d.getTime())
+            ? `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`
+            : '';
+
+          // サムネイル画像（noteのRSSから画像URLを取得、ない場合はプレースホルダー）
+          const imgUrl = item.thumbnail || (item.enclosure && item.enclosure.link) || 'https://placehold.co/600x400/e2e8f0/475569?text=NOTE';
+
+          // 執筆者名（noteの著者名、またはJYRAC）
+          const creator = item.author || 'JYRAC';
+
+          return `
+            <article class="bg-white rounded-3xl border border-slate-200 shadow-xs overflow-hidden flex flex-col group hover:shadow-md transition-shadow duration-300 relative text-left">
+              <span class="absolute top-4 left-4 z-10 bg-emerald-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                ${creator}
+              </span>
+              <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="flex flex-col h-full no-underline">
+                <div class="aspect-video w-full bg-slate-100 overflow-hidden relative">
+                  <img
+                    src="${imgUrl}"
+                    alt="${item.title}"
+                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    loading="lazy"
+                    onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=NOTE'; this.onerror=null;"
+                  />
+                </div>
+                <div class="p-5 sm:p-6 flex flex-col flex-grow justify-between">
+                  <div class="space-y-2">
+                    <span class="text-xs font-bold text-slate-400 block font-mono">${dateStr}</span>
+                    <h3 class="text-sm sm:text-base font-black text-slate-950 leading-snug group-hover:text-blue-600 transition-colors line-clamp-3">
+                      ${item.title}
+                    </h3>
+                  </div>
+                  <span class="text-xs font-bold text-blue-600 flex items-center space-x-1 pt-4 mt-auto">
+                    <span>記事を読む</span>
+                    <svg class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </article>
+          `;
+        }).join('');
+      } else {
+        container.innerHTML = `
+          <div class="sm:col-span-3 p-8 rounded-3xl bg-white border border-dashed border-slate-200 text-center space-y-2">
+            <p class="text-xs text-slate-500 font-medium">現在コラムを準備中です。順次更新いたします。</p>
+            <a href="${MAGAZINE_URL}" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-bold text-emerald-600 hover:underline">
+              公式マガジンはこちら →
+            </a>
+          </div>
+        `;
+      }
+    } catch (err) {
+      console.error('noteフィードの読み込みに失敗しました:', err);
+      container.innerHTML = `
+        <div class="sm:col-span-3 p-6 rounded-3xl bg-white border border-slate-200 text-center space-y-2">
+          <p class="text-xs text-slate-400">コラムの読み込みに失敗しました。</p>
+          <a href="${MAGAZINE_URL}" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-bold text-emerald-600 hover:underline">
+            noteで直接記事を見る →
+          </a>
+        </div>
+      `;
+    }
+  }
+
+  loadNoteArticles();
+</script>
