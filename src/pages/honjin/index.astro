@@ -11,60 +11,50 @@ const logoPath = `${cleanBase}/logo.png`;
   description="Think BIG, We’ll Go Further. 全国生徒会防災サミット「本陣」。秋の陣を経て全国の想いとアクションが集結するメインステージ。Coming soon..."
 >
   <!-- ナビゲーションバー -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2">
-      <a href={`${cleanBase}/`} class="flex items-center gap-2.5 sm:gap-3 no-underline group select-none min-w-0">
-        <img src={logoPath} alt="ロゴ" class="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-full shadow-2xs shrink-0" />
-        <div class="flex flex-col truncate">
-          <span class="font-black text-slate-900 tracking-tight text-xs sm:text-base group-hover:text-blue-600 transition truncate">
-            全国生徒会防災サミット
-          </span>
-          <span class="text-[8px] sm:text-[9px] font-black tracking-widest text-amber-600 uppercase font-mono">
-            HONJIN
-          </span>
-        </div>
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-2xs">
+    <div class="max-w-4xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between gap-2">
+      <a href={`${cleanBase}/`} class="flex items-center gap-2 no-underline group select-none min-w-0">
+        <img src={logoPath} alt="ロゴ" class="w-7 h-7 sm:w-8 sm:h-8 object-contain rounded-full shrink-0" />
+        <span class="font-black text-slate-900 text-xs sm:text-sm truncate">
+          全国生徒会防災サミット
+        </span>
       </a>
       
-      <!-- レスポンシブ対応 ホームに戻るボタン -->
       <a
         href={`${cleanBase}/`}
-        class="inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-blue-600 bg-slate-100/80 hover:bg-white border border-slate-200/80 hover:border-blue-400 active:scale-95 transition shrink-0 no-underline shadow-2xs"
+        class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-blue-600 bg-slate-100/70 hover:bg-slate-200/70 transition shrink-0 no-underline"
       >
         <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
-        <span class="hidden sm:inline">トップに戻る</span>
-        <span class="sm:hidden">ホーム</span>
+        <span>戻る</span>
       </a>
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center space-y-12">
+  <main class="max-w-xl mx-auto px-4 py-8 sm:py-16 text-center">
     
-    <!-- メインティザーカード -->
-    <div class="relative overflow-hidden bg-white rounded-3xl p-8 sm:p-16 border border-slate-200 shadow-sm space-y-8">
-      <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-500 via-orange-500 to-blue-600"></div>
+    <!-- メインカード：スマホに合わせたゆとり設計 -->
+    <div class="relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-slate-200 shadow-xs space-y-6">
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 via-orange-500 to-blue-600"></div>
 
       <!-- ステータスバッジ -->
-      <div class="flex flex-wrap items-center justify-center gap-2">
-        <span class="px-3 py-1 rounded bg-slate-900 text-white text-[10px] font-mono font-black tracking-wider uppercase">
+      <div class="flex items-center justify-center gap-2">
+        <span class="px-2 py-0.5 rounded bg-slate-900 text-white text-[9px] font-mono font-black tracking-wider uppercase">
           MAIN STAGE
         </span>
-        <span class="px-3 py-1 rounded bg-amber-50 text-amber-700 text-[11px] font-bold border border-amber-200 font-mono animate-pulse">
+        <span class="px-2 py-0.5 rounded bg-amber-50 text-amber-700 text-[10px] font-bold border border-amber-200 font-mono animate-pulse">
           Coming soon...
         </span>
       </div>
 
       <!-- スローガン＆タイトル -->
-      <div class="space-y-4">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200">
-          <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-          <span class="text-xs sm:text-sm font-mono font-black tracking-widest text-blue-700 uppercase">
-            Think BIG, We’ll Go Further
-          </span>
-        </div>
+      <div class="space-y-2">
+        <p class="text-[10px] sm:text-xs font-mono font-black tracking-widest text-blue-600 uppercase">
+          Think BIG, We’ll Go Further
+        </p>
 
-        <h1 class="text-3xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+        <h1 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-snug">
           全国生徒会防災サミット<br />
           <span class="bg-gradient-to-r from-amber-600 via-orange-500 to-blue-600 bg-clip-text text-transparent">
             本陣
@@ -72,53 +62,39 @@ const logoPath = `${cleanBase}/logo.png`;
         </h1>
       </div>
 
-      <!-- メッセージ（未確定なスペックを書かず、想いと期待感のみを表現） -->
-      <div class="max-w-xl mx-auto space-y-4 text-xs sm:text-base text-slate-600 leading-relaxed font-medium">
-        <p class="text-base sm:text-lg font-bold text-slate-800">
-          秋の陣を経て、すべての想いとアクションがここに集結する。
+      <!-- メッセージ（要点だけをすっきり配置） -->
+      <div class="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+        <p class="font-bold text-slate-800 text-sm sm:text-base">
+          秋の陣を経て、全国の想いとアクションが集結する。
         </p>
-        <p>
-          各学校の枠を越え、地域ごとのリアルな防災を持ち寄り、次世代のスタンダードを社会へ提示するメインステージ。<br />
-          現在、全国規模での開催に向けて企画構想を進行しています。
+        <p class="text-slate-500 text-[11px] sm:text-xs">
+          各学校の枠を越え、地域ごとのリアルな防災を社会へ発信するメインステージ。現在、全国規模での開催に向けて企画構想を進行中です。
         </p>
-        <p class="text-slate-400 text-xs sm:text-sm pt-2">
-          ※ 開催時期・プログラム詳細・参加要項は、秋の陣の進行に合わせて順次発表いたします。
+        <p class="text-slate-400 text-[10px] sm:text-[11px]">
+          ※ 開催時期・参加要項は決定次第、順次発表いたします。
         </p>
       </div>
 
-      <!-- アクション（Instagram誘導とDAY1リンク） -->
-      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+      <!-- アクションボタン（スマホで指に馴染むサイズ感） -->
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
         <a
           href="https://www.instagram.com/pred.studentsummit"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm no-underline shadow-md active:scale-98 transition"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl bg-slate-900 hover:bg-blue-600 text-white font-bold text-xs no-underline shadow-xs active:scale-98 transition"
         >
           <span>公式Instagramで続報を受け取る</span>
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </a>
         <a
           href={`${cleanBase}/autumn/day1`}
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-6 py-3.5 rounded-xl bg-white border border-slate-300 hover:border-blue-500 text-slate-700 hover:text-blue-600 text-xs sm:text-sm font-bold no-underline transition shadow-2xs"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-1 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:text-blue-600 text-xs font-bold no-underline transition"
         >
-          <span>まずは秋の陣 DAY 1 を見る →</span>
+          <span>秋の陣 DAY 1 を見る →</span>
         </a>
       </div>
-    </div>
-
-    <!-- 戻るボタン -->
-    <div class="pt-4">
-      <a
-        href={`${cleanBase}/`}
-        class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-slate-500 hover:text-blue-600 no-underline transition"
-      >
-        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-        <span>トップページに戻る</span>
-      </a>
     </div>
 
   </main>
