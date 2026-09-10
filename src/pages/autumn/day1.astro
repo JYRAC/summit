@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 
 const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const logoPath = `${cleanBase}/logo.png`;
+const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
 ---
 
 <Layout
@@ -12,11 +13,11 @@ const logoPath = `${cleanBase}/logo.png`;
 >
   <!-- ナビゲーションバー -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-      <a href={`${cleanBase}/`} class="flex items-center gap-2.5 sm:gap-3 no-underline group select-none">
-        <img src={logoPath} alt="ロゴ" class="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-full shadow-2xs" />
-        <div class="flex flex-col">
-          <span class="font-black text-slate-900 tracking-tight text-sm sm:text-base group-hover:text-blue-600 transition">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2">
+      <a href={`${cleanBase}/`} class="flex items-center gap-2 sm:gap-3 no-underline group select-none min-w-0">
+        <img src={logoPath} alt="ロゴ" class="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-full shadow-2xs shrink-0" />
+        <div class="flex flex-col truncate">
+          <span class="font-black text-slate-900 tracking-tight text-xs sm:text-base group-hover:text-blue-600 transition truncate">
             全国生徒会防災サミット
           </span>
           <span class="text-[8px] sm:text-[9px] font-black tracking-widest text-blue-600 uppercase font-mono">
@@ -24,16 +25,22 @@ const logoPath = `${cleanBase}/logo.png`;
           </span>
         </div>
       </a>
+      
+      <!-- レスポンシブ対応 ホームに戻るボタン -->
       <a
         href={`${cleanBase}/`}
-        class="inline-flex items-center gap-1 text-xs font-bold text-slate-600 hover:text-blue-600 no-underline px-3 py-1.5 rounded-lg border border-slate-200 hover:border-blue-400 transition"
+        class="inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-blue-600 bg-slate-100/80 hover:bg-white border border-slate-200/80 hover:border-blue-400 active:scale-95 transition shrink-0 no-underline shadow-2xs"
       >
-        <span>← トップに戻る</span>
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        <span class="hidden sm:inline">トップに戻る</span>
+        <span class="sm:hidden">ホーム</span>
       </a>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-12">
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-16 space-y-10 sm:space-y-14">
     
     <!-- ヘッダーカード -->
     <div class="relative overflow-hidden bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-5 text-left">
@@ -43,14 +50,14 @@ const logoPath = `${cleanBase}/logo.png`;
         <span class="px-2.5 py-1 rounded bg-slate-900 text-white text-[10px] font-mono font-black tracking-wider uppercase">
           DAY 1 / 秋の陣
         </span>
-        <span class="px-2.5 py-1 rounded bg-orange-50 text-orange-600 text-[11px] font-bold border border-orange-100">
+        <span class="px-2.5 py-1 rounded bg-orange-50 text-orange-600 text-[11px] font-bold border border-orange-100 animate-pulse">
           エントリー受付中
         </span>
       </div>
 
       <div class="space-y-1">
         <span class="text-xs font-mono font-bold text-blue-600">～Think BIG, We’ll Go Further～</span>
-        <h1 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+        <h1 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
           全国生徒会防災サミット 9月度 秋の陣 DAY１
         </h1>
       </div>
@@ -62,22 +69,23 @@ const logoPath = `${cleanBase}/logo.png`;
 
       <!-- 開催概要リスト -->
       <div class="pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-slate-700">
-        <div>📅 <strong>日時：</strong>2026年9月13日(日) 17:00–18:50</div>
-        <div>💻 <strong>会場：</strong>Zoom（オンライン）</div>
-        <div>👥 <strong>対象：</strong>全国の中学生・高校生（生徒会・有志）</div>
-        <div>🎫 <strong>参加費：</strong>無料</div>
+        <div class="flex items-center gap-1.5"><span>📅</span> <span><strong>日時：</strong>2026年9月13日(日) 17:00–18:50</span></div>
+        <div class="flex items-center gap-1.5"><span>💻</span> <span><strong>会場：</strong>Zoom（オンライン）</span></div>
+        <div class="flex items-center gap-1.5"><span>👥</span> <span><strong>対象：</strong>全国の中学生・高校生（生徒会・有志）</span></div>
+        <div class="flex items-center gap-1.5"><span>🎫</span> <span><strong>参加費：</strong>無料</span></div>
       </div>
 
+      <!-- Googleフォーム申込ボタン -->
       <div class="pt-2">
         <a
-          href="https://www.instagram.com/pred.studentsummit"
+          href={formUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm no-underline shadow-md hover:scale-[1.02] active:scale-[0.98] transition"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 text-white font-bold text-sm sm:text-base no-underline shadow-md hover:scale-[1.02] active:scale-[0.98] transition"
         >
-          <span>公式Instagramから参加エントリー</span>
+          <span>参加申し込みフォームを開く（Googleフォーム）</span>
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
       </div>
@@ -98,7 +106,7 @@ const logoPath = `${cleanBase}/logo.png`;
           <div class="font-mono font-bold text-blue-600 text-sm w-28 shrink-0">17:00 – 17:10</div>
           <div>
             <h3 class="font-bold text-slate-900 text-base">開会・開会の言葉</h3>
-            <p class="text-xs text-slate-500">実行委員長：梁川 正光</p>
+            <p class="text-xs text-slate-500 mt-0.5">実行委員長：梁川 正光</p>
           </div>
         </div>
 
@@ -113,7 +121,7 @@ const logoPath = `${cleanBase}/logo.png`;
             <p class="text-xs text-slate-600 font-semibold">
               講師：新潟大学 災害・復興科学研究所 卜部厚志 教授
             </p>
-            <p class="text-xs text-slate-500">
+            <p class="text-xs text-slate-500 leading-relaxed">
               講演時間 約45〜55分 ＋ 参加中高生との質疑応答10分。現場の第一線から地域防災のリアルを学びます。
             </p>
           </div>
@@ -127,7 +135,7 @@ const logoPath = `${cleanBase}/logo.png`;
             <h3 class="font-bold text-slate-900 text-base">
               グループディスカッション（ブレイクアウトルーム）
             </h3>
-            <p class="text-xs text-slate-500">
+            <p class="text-xs text-slate-500 leading-relaxed">
               極力地域別に分かれ、JYRACオリジナル防災ゲームや「理想の街」についてのディスカッションを展開。
             </p>
           </div>
@@ -138,13 +146,13 @@ const logoPath = `${cleanBase}/logo.png`;
           <div class="font-mono font-bold text-slate-500 text-sm w-28 shrink-0">18:45 – 18:50</div>
           <div>
             <h3 class="font-bold text-slate-900 text-base">閉会の言葉・閉会</h3>
-            <p class="text-xs text-slate-500">JYRAC理事長：久保 壮太郎 ｜ 18:50 終了予定</p>
+            <p class="text-xs text-slate-500 mt-0.5">JYRAC理事長：久保 壮太郎 ｜ 18:50 終了予定</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- グループディスカッション内企画（簡単に紹介） -->
+    <!-- グループディスカッション内企画 -->
     <div class="space-y-6 text-left">
       <div class="space-y-1">
         <span class="text-xs font-mono font-bold text-emerald-600 tracking-wider uppercase">WORKSHOP & TOPICS</span>
@@ -179,7 +187,7 @@ const logoPath = `${cleanBase}/logo.png`;
           <p class="text-xs text-slate-500 leading-relaxed font-medium">
             以下のテーマなどを切り口に、学校や街の防災課題について語り合います：
           </p>
-          <ul class="text-xs text-slate-600 space-y-1 pl-4 list-disc font-medium">
+          <ul class="text-xs text-slate-600 space-y-1 pl-4 list-disc font-medium leading-relaxed">
             <li>今の自分の街のリアルな課題は？</li>
             <li>学校から帰れなくなったらどうする？</li>
             <li>あなたが地元の防災責任者になったら何をしたい？</li>
@@ -191,11 +199,19 @@ const logoPath = `${cleanBase}/logo.png`;
       </div>
     </div>
 
-    <!-- お問い合わせ・戻る導線 -->
-    <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-      <p>主催：特定非営利活動法人日本若者防災復興協会（JYRAC）</p>
-      <a href={`${cleanBase}/`} class="text-blue-600 font-bold hover:underline">
-        トップページに戻る →
+    <!-- お問い合わせ・レスポンシブ対応 戻るボタン -->
+    <div class="pt-8 border-t border-slate-200 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+      <p class="text-[11px] sm:text-xs text-slate-400 text-center sm:text-left">
+        主催：特定非営利活動法人日本若者防災復興協会（JYRAC）
+      </p>
+      <a
+        href={`${cleanBase}/`}
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-300 hover:border-blue-500 hover:text-blue-600 text-slate-700 text-xs sm:text-sm font-bold shadow-2xs transition active:scale-95 no-underline"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        <span>トップページに戻る</span>
       </a>
     </div>
 
