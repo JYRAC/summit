@@ -1,18 +1,20 @@
 ---
 // src/layouts/Layout.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
 interface Props {
   title?: string;
   description?: string;
 }
 
 const {
-  title = "全国生徒会防災サミット | 公式サイト",
-  description = "全国の中学生・高校生が地域と学校を越えて集い、次世代の防災スタンダードを創るプラットフォーム。"
+  title = "生徒会防災サミット | Think BIG, We’ll Go Further",
+  description = "全国の中学生・高校生が地域と学校を越えて集い、次世代の防災スタンダードを創るプラットフォーム。主催：特定非営利活動法人日本若者防災復興協会（JYRAC）"
 } = Astro.props;
 
-// パスの二重スラッシュや欠落を確実に防ぐ安全な処理
 const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
-const faviconPath = `${cleanBase}/logo.png`; // 確実に存在するロゴ画像をファビコンに指定
+const faviconPath = `${cleanBase}/logo.png`;
 ---
 
 <!doctype html>
@@ -34,18 +36,24 @@ const faviconPath = `${cleanBase}/logo.png`; // 確実に存在するロゴ画�
       rel="stylesheet"
     />
   </head>
-  <body class="relative bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen overflow-x-hidden">
+  <body class="relative bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen overflow-x-hidden flex flex-col">
     
-    <!-- 背景装飾（z-0に固定し、メニューやコンテンツの邪魔をしない設計） -->
+    <!-- 背景装飾（コンテンツ背面に固定） -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-gradient-to-tr from-blue-200/40 via-sky-100/30 to-transparent blur-3xl rounded-full"></div>
       <div class="w-full h-full bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-60"></div>
     </div>
 
-    <!-- ページコンテンツ全体（z-10） -->
-    <div class="relative z-10 flex flex-col min-h-screen">
+    <!-- 共通ヘッダー（ナビゲーションバー ＋ バーガーメニュー） -->
+    <Header />
+
+    <!-- メイン領域（フッターをページ最下部に押し下げる flex-1 設定） -->
+    <div class="relative z-10 flex-1 flex flex-col">
       <slot />
     </div>
+
+    <!-- 共通フッター -->
+    <Footer />
 
   </body>
 </html>
