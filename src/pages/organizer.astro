@@ -32,13 +32,12 @@ const jyracLogoPath = `${cleanBase}/IMG_8325.jpg`;
       </p>
     </div>
 
-    <!-- メインカード：法人紹介 ＆ ロゴ・アイデンティティ -->
+    <!-- メインカード：法人紹介 ＆ ロゴ -->
     <div class="relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xs space-y-8">
       <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-400"></div>
 
-      <!-- ① ロゴ ＆ シンボル解説セットブロック -->
-      <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col md:flex-row items-center md:items-start gap-5 sm:gap-6">
-        <!-- ロゴ画像コンテナ -->
+      <!-- ① ロゴ表示ブロック（画像のみ） -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
         <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white border border-slate-200 p-2.5 flex items-center justify-center shrink-0 shadow-2xs overflow-hidden">
           <img
             src={jyracLogoPath}
@@ -47,22 +46,20 @@ const jyracLogoPath = `${cleanBase}/IMG_8325.jpg`;
           />
         </div>
 
-        <!-- ロゴの説明・由来テキスト -->
-        <div class="space-y-2 text-center md:text-left">
-          <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+        <div class="space-y-1.5 text-center sm:text-left">
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
             <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-black font-mono tracking-wider uppercase">
-              SYMBOL IDENTITY
+              ORGANIZATION LOGO
             </span>
             <span class="text-xs font-mono font-bold text-slate-500">
               Japan Youth Resilience Action Consortium
             </span>
           </div>
           <h3 class="text-base sm:text-lg font-black text-slate-900">
-            JYRAC シンボルマークに込めた想い
+            特定非営利活動法人日本若者防災復興協会
           </h3>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-            JYRAC（Japan Youth Resilience Action Consortium）のシンボルは、若者が持つしなやかなエネルギーと、全国をつなぐ強固なネットワークを象徴しています。<br class="hidden sm:inline" />
-            「災害に対してただ身を縮めて守られるのではなく、自らの手で未来の安全を切り拓く」という強い意思と連帯を表しています。
+            JYRACは、次世代主導の防災教育や地域連携を推進するNPO法人です。「守られる側から、動かす側へ」を掲げ、全国の中高生と共に持続可能な防災アクションを形にしています。
           </p>
         </div>
       </div>
@@ -71,16 +68,16 @@ const jyracLogoPath = `${cleanBase}/IMG_8325.jpg`;
       <div class="space-y-3 pt-2 border-t border-slate-100">
         <div class="flex items-center gap-2">
           <span class="px-2.5 py-0.5 rounded bg-slate-900 text-white text-[10px] font-mono font-black tracking-wider uppercase">
-            ORGANIZATION
+            ABOUT JYRAC
           </span>
           <span class="text-xs font-bold text-slate-400">特定非営利活動法人（NPO法人）</span>
         </div>
 
         <h2 class="text-xl sm:text-2xl font-black text-slate-900">
-          特定非営利活動法人日本若者防災復興協会（JYRAC）
+          次世代主導の防災・復興プラットフォーム
         </h2>
         <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-          若者の力を結集し、次世代主導の防災教育・被災地支援・地域コミュニティのレジリエンス（回復力・強靭性）向上を推進するNPO法人です。「守られる側から、動かす側へ」を共通の思想として掲げ、全国の中学生・高校生・大学生ネットワークと共に持続可能な防災アクションを形にしています。
+          若者の力を結集し、次世代主導の防災教育・被災地支援・地域コミュニティのレジリエンス（回復力・強靭性）向上を推進しています。全国の中学生・高校生・大学生ネットワークと共に、平時からつながる共助の基盤づくりを行っています。
         </p>
       </div>
 
