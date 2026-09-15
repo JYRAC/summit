@@ -8,6 +8,9 @@ import NoteFeed from '../components/NoteFeed.astro';
 const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const logoPath = `${cleanBase}/logo.png`;
 
+// 10月参加GoogleフォームURL
+const entryFormUrl = "https://forms.gle/KEq9MUEeADgr5mGi9";
+
 // よくある質問データ（中高生・保護者・学校向け）
 const faqs = [
   {
@@ -29,7 +32,7 @@ const faqs = [
 ];
 ---
 
-<Layout title="生徒会防災サミット | Think BIG, We’ll Go Further" description="“Think BIG, We’ll Go Further” 全国の中学生・高校生が地域と学校を越えて集い、次世代の防災スタンダードを創るプラットフォーム。主催：特定非営利活動法人日本若者防災復興協会（JYRAC）">
+<Layout title="全国生徒会防災サミット | Think BIG, We’ll Go Further" description="“Think BIG, We’ll Go Further” 全国の中学生・高校生が地域と学校を越えて集い、次世代の防災スタンダードを創るプラットフォーム。主催：特定非営利活動法人日本若者防災復興協会（JYRAC）">
   <Header />
 
   <!-- メインコンテンツ（pb-24で下部追従バーとの重なりを防止） -->
@@ -104,7 +107,6 @@ const faqs = [
           </a>
         </div>
 
-        <!-- ウィジェット飛び出し・ガタつき防止コンテナ -->
         <div class="w-full overflow-hidden bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 border border-slate-200/80 shadow-2xs min-h-[220px]">
           <div class="w-full max-w-full overflow-hidden">
             <behold-widget feed-id="2xQc7A0wIFz3oCFXIkyx"></behold-widget>
@@ -114,115 +116,58 @@ const faqs = [
 
     </div>
 
-    <!-- 3. 直近サミット詳細（DAY 1 エントリー ＆ DAY 2・3 予告） -->
+    <!-- 3. 秋の陣 開催スケジュール（直近サミット一覧） -->
     <section id="program" class="w-full space-y-4 min-w-0 scroll-mt-24">
-      
-      <!-- DAY 1 特大カード -->
-      <div class="relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-slate-200/90 shadow-xs min-w-0">
-        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-400 via-blue-500 to-emerald-400"></div>
+      <div class="border-b border-slate-200/80 pb-2.5">
+        <span class="text-[10px] font-mono font-bold text-blue-600 uppercase tracking-widest">SUMMIT PROGRAM</span>
+        <h2 class="text-base sm:text-xl font-black text-slate-900 tracking-tight">秋の陣 開催スケジュール</h2>
+      </div>
 
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 text-left min-w-0">
-          <div class="space-y-2 min-w-0">
-            <div class="flex items-center gap-2">
-              <span class="px-2 py-0.5 rounded bg-slate-900 text-white text-[9px] sm:text-[10px] font-black tracking-widest uppercase font-mono shrink-0">
-                NEXT SUMMIT
-              </span>
-              <span class="text-[10px] sm:text-xs font-bold text-orange-600 bg-orange-50 px-2.5 py-0.5 rounded-full border border-orange-200 truncate">
-                DAY 1 エントリー受付中
-              </span>
-            </div>
-            
-            <a href={`${cleanBase}/autumn/day1`} class="block no-underline group/title min-w-0">
-              <h2 class="text-base sm:text-xl md:text-2xl font-black text-slate-900 group-hover/title:text-blue-600 transition tracking-tight break-words">
-                生徒会防災サミット2026 秋の陣 DAY１
-              </h2>
-            </a>
-            
-            <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2.5 text-xs font-semibold text-slate-600">
-              <span class="text-blue-600 font-mono font-bold shrink-0">2026.09.13 (Sun) 17:00–18:50</span>
-              <span class="text-slate-300 hidden sm:inline">/</span>
-              <span class="truncate">Zoom オンライン開催（全国どこからでも参加可能）</span>
-            </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+        <!-- DAY 1 (終了) -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-2xs flex flex-col justify-between space-y-3">
+          <div class="space-y-2">
+            <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-700 text-[9px] font-mono font-bold">09.13 終了</span>
+            <h3 class="font-black text-slate-800 text-sm">秋の陣 DAY 1</h3>
+            <p class="text-xs text-slate-500">新潟大学・卜部教授の特別講演と全国グループ対話（終了・御礼）</p>
           </div>
-
-          <!-- CTAボタン -->
-          <a href={`${cleanBase}/autumn/day1`} class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs sm:text-sm font-bold shadow-md hover:scale-[1.02] active:scale-[0.98] transition shrink-0 no-underline w-full sm:w-auto">
-            <span>企画詳細・エントリーを見る</span>
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
+          <a href={`${cleanBase}/autumn/day1`} class="text-xs font-bold text-blue-600 hover:underline pt-2 border-t border-slate-100 block">
+            開催レポートを見る →
           </a>
         </div>
 
-        <!-- タイムテーブル概要 -->
-        <div class="mt-6 pt-5 border-t border-slate-100 text-left space-y-3 min-w-0">
-          <span class="text-[10px] font-black tracking-wider text-slate-400 uppercase font-mono">DAY 1 PROGRAM / タイムテーブル</span>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
-            <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
-              <span class="font-mono font-bold text-slate-500 text-[10px]">17:00 – 17:10</span>
-              <p class="font-bold text-slate-800 text-xs sm:text-sm">開会挨拶</p>
-              <p class="text-[11px] text-slate-500">実行委員長：梁川 正光</p>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
-              <span class="font-mono font-bold text-blue-600 text-[10px]">17:10 – 18:15</span>
-              <p class="font-bold text-slate-800 text-xs sm:text-sm">卜部教授 特別講演会</p>
-              <p class="text-[11px] text-slate-500">新潟大学 災害・復興科学研究所</p>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
-              <span class="font-mono font-bold text-indigo-600 text-[10px]">18:15 – 18:45</span>
-              <p class="font-bold text-slate-800 text-xs sm:text-sm">グループ対話ワーク</p>
-              <p class="text-[11px] text-slate-500">地域別ルームで全国の仲間と対話</p>
-            </div>
+        <!-- DAY 2 (募集中・詳細ページへ) -->
+        <div class="bg-gradient-to-br from-blue-50/50 to-indigo-50/50 rounded-2xl p-5 border-2 border-blue-400 shadow-sm flex flex-col justify-between space-y-3 relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-blue-600 text-white text-[9px] font-mono font-bold px-3 py-1 rounded-bl-xl">
+            受付中
+          </div>
+          <div class="space-y-2">
+            <span class="px-2 py-0.5 rounded bg-blue-600 text-white text-[9px] font-mono font-bold">10.24 開催</span>
+            <h3 class="font-black text-slate-900 text-sm sm:text-base">秋の陣 DAY 2</h3>
+            <p class="text-xs text-slate-600">テーマ：【考える防災から動く防災へ】詳細なタイムテーブルや概要はこちら</p>
+          </div>
+          <div class="pt-2 border-t border-blue-200/60 flex items-center justify-between">
+            <a href={`${cleanBase}/autumn/day2`} class="text-xs font-black text-blue-600 hover:underline">
+              詳細・申込ページへ →
+            </a>
+            <a href={entryFormUrl} target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-[11px] font-bold shadow-xs">
+              フォーム ↗
+            </a>
           </div>
         </div>
 
-        <div class="mt-4 pt-3 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[10px] sm:text-[11px] text-slate-400 text-left">
-          <span>主催：特定非営利活動法人日本若者防災復興協会（JYRAC）</span>
-          <span>対象：全国の中学・高校生 / 参加費：完全無料</span>
+        <!-- DAY 3 (予告) -->
+        <div class="bg-white rounded-2xl p-5 border border-dashed border-slate-300 shadow-2xs flex flex-col justify-between space-y-3">
+          <div class="space-y-2">
+            <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 text-[9px] font-mono font-bold">11月予定</span>
+            <h3 class="font-black text-slate-800 text-sm">秋の陣 DAY 3</h3>
+            <p class="text-xs text-slate-500">全国の中高生による実践成果の発表・共同提言の集大成セッション</p>
+          </div>
+          <a href={`${cleanBase}/autumn/day3`} class="text-xs font-bold text-indigo-600 hover:underline pt-2 border-t border-slate-100 block">
+            予告を見る →
+          </a>
         </div>
       </div>
-
-      <!-- DAY 2・DAY 3 予告 -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left min-w-0">
-        <a href={`${cleanBase}/autumn/day2`} class="rounded-2xl bg-white hover:bg-slate-50 p-4 sm:p-5 border border-dashed border-slate-300 hover:border-blue-400 shadow-2xs flex flex-col justify-between space-y-3 no-underline group transition min-w-0">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between">
-              <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-[9px] font-mono font-black shrink-0">
-                OCTOBER 2026
-              </span>
-              <span class="text-[8px] font-mono font-bold text-slate-400 uppercase">Coming soon...</span>
-            </div>
-            <h3 class="font-black text-slate-900 group-hover:text-blue-600 transition text-xs sm:text-sm">秋の陣 DAY２</h3>
-            <p class="text-[11px] text-slate-500 leading-snug break-words">
-              学校連携アクションや地域別プロジェクトを始動する実践セッション。
-            </p>
-          </div>
-          <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
-            <span class="text-blue-600 font-bold group-hover:underline">詳細・予告を見る →</span>
-            <span class="text-blue-600 font-mono font-bold">DAY 2</span>
-          </div>
-        </a>
-
-        <a href={`${cleanBase}/autumn/day3`} class="rounded-2xl bg-white hover:bg-slate-50 p-4 sm:p-5 border border-dashed border-slate-300 hover:border-indigo-400 shadow-2xs flex flex-col justify-between space-y-3 no-underline group transition min-w-0">
-          <div class="space-y-1.5">
-            <div class="flex items-center justify-between">
-              <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 text-[9px] font-mono font-black shrink-0">
-                NOVEMBER 2026
-              </span>
-              <span class="text-[8px] font-mono font-bold text-slate-400 uppercase">Coming soon...</span>
-            </div>
-            <h3 class="font-black text-slate-900 group-hover:text-indigo-600 transition text-xs sm:text-sm">秋の陣 DAY３</h3>
-            <p class="text-[11px] text-slate-500 leading-snug break-words">
-              秋の陣の集大成。全国の中高生による実践成果の発表・共同提言。
-            </p>
-          </div>
-          <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
-            <span class="text-indigo-600 font-bold group-hover:underline">詳細・予告を見る →</span>
-            <span class="text-indigo-600 font-mono font-bold">DAY 3</span>
-          </div>
-        </a>
-      </div>
-
     </section>
 
     <!-- 4. よくあるご質問（FAQ）セクション -->
@@ -296,7 +241,7 @@ const faqs = [
       </div>
     </section>
 
-    <!-- 6. ★【新設】過去大会アーカイブ（ARCHIVE）セクション ★ -->
+    <!-- 6. 過去大会アーカイブ（ARCHIVE）セクション -->
     <section class="space-y-4 text-left min-w-0">
       <div class="flex items-center justify-between border-b border-slate-200/80 pb-2">
         <div>
@@ -348,7 +293,7 @@ const faqs = [
               生徒会防災サミット2026 秋の陣・本陣
             </h3>
             <p class="text-xs text-slate-400 leading-relaxed">
-              「守られる側から、未来を動かす側へ」をテーマに、9月・10月・11月の秋の陣を経て本陣へと歩みを進めています。各セッション終了後にレポートを順次アーカイブします。
+              「守られる側から、未来を動かす側へ」をテーマに、10月24日開催のDAY 2（考える防災から動く防災へ）をはじめ、本陣へと歩みを進めています。
             </p>
           </div>
           <div class="pt-2 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
@@ -361,17 +306,17 @@ const faqs = [
 
   </main>
 
-  <!-- スマホ専用：常時追従エントリーバー -->
+  <!-- スマホ専用：常時追従エントリーバー（DAY 2 詳細ページへ誘導） -->
   <aside class="sm:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200/80 shadow-[0_-4px_16px_rgba(0,0,0,0.06)] flex items-center justify-between gap-3">
     <div class="flex flex-col min-w-0 pl-1">
-      <span class="text-[9px] font-mono font-bold text-blue-600">2026.09.13 (Sun) Zoom</span>
-      <span class="text-xs font-black text-slate-900 truncate">秋の陣 DAY 1 開催</span>
+      <span class="text-[9px] font-mono font-bold text-blue-600">10.24 (Sat) 17:00〜 Zoom</span>
+      <span class="text-xs font-black text-slate-900 truncate">秋の陣 DAY 2 受付中</span>
     </div>
     <a
-      href={`${cleanBase}/autumn/day1`}
+      href={`${cleanBase}/autumn/day2`}
       class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-black shadow-md shrink-0 no-underline active:scale-95 transition"
     >
-      <span>エントリー</span>
+      <span>詳細を見る</span>
       <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
       </svg>
