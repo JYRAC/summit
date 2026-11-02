@@ -5,12 +5,11 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
 const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
-const entryFormUrl = "https://forms.gle/KEq9MUEeADgr5mGi9";
 ---
 
 <Layout 
-  title="2026全国生徒会防災サミット 秋の陣 DAY 2 | 詳細・エントリー" 
-  description="2026全国生徒会防災サミット 秋の陣 DAY 2。10月24日（土）開催。テーマは【考える防災から動く防災へ】。主催：JYRAC、共催：東北生徒会連合。"
+  title="2026全国生徒会防災サミット 秋の陣 DAY 2 | 開催レポート・御礼" 
+  description="2026全国生徒会防災サミット 秋の陣 DAY 2。10月24日（土）開催。テーマは【考える防災から動く防災へ】。多数のご参加ありがとうございました。"
 >
   <Header />
 
@@ -24,9 +23,9 @@ const entryFormUrl = "https://forms.gle/KEq9MUEeADgr5mGi9";
         <span>秋の陣 DAY 2</span>
       </div>
 
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200">
-        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-        <span class="text-xs font-black text-blue-700 font-mono">10月24日（土）開催・エントリー受付中</span>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200">
+        <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+        <span class="text-xs font-black text-emerald-700 font-mono">10月24日（土）全日程終了・御礼</span>
       </div>
 
       <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-snug break-words">
@@ -38,30 +37,17 @@ const entryFormUrl = "https://forms.gle/KEq9MUEeADgr5mGi9";
       </p>
     </div>
 
-    <!-- メインCTAカード（Googleフォームへの導線） -->
-    <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-xl space-y-6">
+    <!-- 御礼メッセージカード -->
+    <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 text-white shadow-xl space-y-4">
       <div class="space-y-2">
-        <span class="px-3 py-1 rounded-full bg-white/20 text-white text-[10px] font-mono font-bold tracking-wider uppercase">
-          ONLINE ZOOM MEETING
+        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-bold tracking-wider uppercase border border-emerald-500/30">
+          EVENT FINISHED
         </span>
-        <h2 class="text-xl sm:text-2xl font-black tracking-tight">参加エントリー受付中（完全無料）</h2>
-        <p class="text-xs sm:text-sm text-blue-100 leading-relaxed">
-          全国の中学生・高校生のみなさん、生徒会や防災に関心のある仲間の参加を心よりお待ちしています！
+        <h2 class="text-xl sm:text-2xl font-black tracking-tight">ご参加いただきありがとうございました！</h2>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          「秋の陣 DAY 2」は全国から多くの中学生・高校生にご参加いただき、大盛況のうちに終了いたしました。<br />
+          熱い議論とアイデアを持ち寄ってくださった参加者の皆さま、関係者の皆さまに心より感謝申し上げます。
         </p>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-3 pt-2">
-        <a
-          href={entryFormUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white text-blue-700 font-black text-sm sm:text-base shadow-md hover:bg-blue-50 active:scale-98 transition no-underline"
-        >
-          <span>参加フォーム（Googleフォーム）を開く</span>
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
       </div>
     </div>
 
@@ -82,11 +68,11 @@ const entryFormUrl = "https://forms.gle/KEq9MUEeADgr5mGi9";
         </div>
         <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1">
           <dt class="font-mono font-bold text-slate-400 text-xs">開催日時</dt>
-          <dd class="font-bold text-slate-900">2026年10月24日（土） 17:00〜19:00（予定）</dd>
+          <dd class="font-bold text-slate-900">2026年10月24日（土） 17:00〜19:00 【終了】</dd>
         </div>
         <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1">
           <dt class="font-mono font-bold text-slate-400 text-xs">会場</dt>
-          <dd class="font-bold text-slate-900">Zoom オンライン開催（全国どこからでも参加可能）</dd>
+          <dd class="font-bold text-slate-900">Zoom オンライン開催</dd>
         </div>
         <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1 sm:col-span-2">
           <dt class="font-mono font-bold text-slate-400 text-xs">全体テーマ</dt>
@@ -101,15 +87,15 @@ const entryFormUrl = "https://forms.gle/KEq9MUEeADgr5mGi9";
       </dl>
     </section>
 
-    <!-- プログラム（予定） -->
+    <!-- プログラム（実施内容） -->
     <section class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs space-y-6 text-left">
       <h2 class="text-lg sm:text-xl font-black text-slate-900 border-b border-slate-100 pb-3">
-        プログラム（予定）
+        当日のプログラム実績
       </h2>
 
       <div class="space-y-3">
         <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
-          <span class="font-mono font-black text-blue-600 text-xs sm:text-sm shrink-0 pt-0.5">17:00</span>
+          <span class="font-mono font-black text-slate-500 text-xs sm:text-sm shrink-0 pt-0.5">17:00</span>
           <div>
             <h3 class="font-black text-slate-900 text-sm sm:text-base">開会</h3>
             <p class="text-xs text-slate-600 mt-0.5">全体オリエンテーション、趣旨説明</p>
@@ -117,15 +103,15 @@ const entryFormUrl = "https://forms.gle/KEq9MUEeADgr5mGi9";
         </div>
 
         <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
-          <span class="font-mono font-black text-blue-600 text-xs sm:text-sm shrink-0 pt-0.5">17:10</span>
+          <span class="font-mono font-black text-slate-500 text-xs sm:text-sm shrink-0 pt-0.5">17:10</span>
           <div>
             <h3 class="font-black text-slate-900 text-sm sm:text-base">講演</h3>
-            <p class="text-xs text-slate-600 mt-0.5">【考える防災から動く防災へ】をテーマにした特別講演・実践アプローチの解説</p>
+            <p class="text-xs text-slate-600 mt-0.5">【考える防災から動く防災へ】特別講演・実践アプローチの解説</p>
           </div>
         </div>
 
         <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
-          <span class="font-mono font-black text-blue-600 text-xs sm:text-sm shrink-0 pt-0.5">18:15</span>
+          <span class="font-mono font-black text-slate-500 text-xs sm:text-sm shrink-0 pt-0.5">18:15</span>
           <div>
             <h3 class="font-black text-slate-900 text-sm sm:text-base">成果提案</h3>
             <p class="text-xs text-slate-600 mt-0.5">全国の仲間とグループに分かれての対話ワークおよびアイデア共有</p>
@@ -133,26 +119,26 @@ const entryFormUrl = "https://forms.gle/KEq9MUEeADgr5mGi9";
         </div>
 
         <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
-          <span class="font-mono font-black text-slate-600 text-xs sm:text-sm shrink-0 pt-0.5">18:50</span>
+          <span class="font-mono font-black text-slate-500 text-xs sm:text-sm shrink-0 pt-0.5">18:50</span>
           <div>
             <h3 class="font-black text-slate-900 text-sm sm:text-base">閉会</h3>
-            <p class="text-xs text-slate-600 mt-0.5">まとめ、今後の案内</p>
+            <p class="text-xs text-slate-600 mt-0.5">まとめ、次回の案内</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 下部に戻るボタン -->
-    <div class="pt-4 flex justify-between items-center">
+    <!-- 下部に戻る・DAY 3 への案内ボタン -->
+    <div class="pt-4 flex flex-col sm:flex-row justify-between items-center gap-3">
       <a href={`${cleanBase}/`} class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-600 hover:text-blue-600 transition no-underline">
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
         <span>トップページに戻る</span>
       </a>
-      
-      <a href={entryFormUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs sm:text-sm no-underline shadow-md hover:bg-blue-700 transition">
-        <span>参加フォームを開く ↗</span>
+
+      <a href={`${cleanBase}/autumn/day3`} class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-bold text-xs sm:text-sm no-underline shadow-md hover:scale-[1.02] active:scale-98 transition">
+        <span>受付中の DAY 3（11/28）案内を見る →</span>
       </a>
     </div>
 
