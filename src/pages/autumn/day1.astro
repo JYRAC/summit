@@ -4,12 +4,11 @@ import Layout from '../../layouts/Layout.astro';
 
 const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const logoPath = `${cleanBase}/logo.png`;
-const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
 ---
 
 <Layout
   title="9月度 秋の陣 DAY 1 | 全国生徒会防災サミット2026"
-  description="2026年9月13日(日)開催。全国生徒会防災サミット2026 秋の陣 DAY１。新潟大学 卜部厚志教授による講演会、オリジナル防災ゲーム「HUG Gioco」、地域別グループディスカッションを実施！"
+  description="2026年9月13日(日)開催。全国生徒会防災サミット2026 秋の陣 DAY１。新潟大学 卜部厚志教授による講演会、オリジナル防災ゲーム「HUG Gioco」、地域別グループディスカッションを実施しました。"
 >
   <!-- ナビゲーションバー -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
@@ -50,8 +49,8 @@ const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
         <span class="px-2.5 py-1 rounded bg-slate-900 text-white text-[10px] font-mono font-black tracking-wider uppercase">
           DAY 1 / 秋の陣
         </span>
-        <span class="px-2.5 py-1 rounded bg-orange-50 text-orange-600 text-[11px] font-bold border border-orange-100 animate-pulse">
-          エントリー受付中
+        <span class="px-2.5 py-1 rounded bg-emerald-50 text-emerald-700 text-[11px] font-bold border border-emerald-200">
+          全日程終了・御礼
         </span>
       </div>
 
@@ -64,39 +63,32 @@ const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
 
       <p class="text-xs sm:text-base text-slate-600 leading-relaxed font-medium">
         新潟大学 災害・復興科学研究所の卜部教授による生きた知見の講演会からスタート！<br class="hidden sm:inline" />
-        後半はJYRACオリジナル防災ゲーム「HUG Gioco」や、全国の中高生が地域を越えて本音で語り合うグループディスカッションを実施します。
+        後半はJYRACオリジナル防災ゲーム「HUG Gioco」や、全国の中高生が地域を越えて本音で語り合うグループディスカッションを実施しました。
       </p>
+
+      <!-- 御礼メッセージボックス -->
+      <div class="p-4 sm:p-5 rounded-2xl bg-slate-900 text-white space-y-1.5">
+        <h2 class="text-sm sm:text-base font-bold text-emerald-400">ご参加いただきありがとうございました！</h2>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          全国からたくさんの生徒会・中高生の皆さんにご参加いただき、大盛況のうちに終了いたしました。
+        </p>
+      </div>
 
       <!-- 開催概要リスト -->
       <div class="pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-slate-700">
-        <div class="flex items-center gap-1.5"><span>📅</span> <span><strong>日時：</strong>2026年9月13日(日) 17:00–18:50</span></div>
+        <div class="flex items-center gap-1.5"><span>📅</span> <span><strong>日時：</strong>2026年9月13日(日) 17:00–18:50 【終了】</span></div>
         <div class="flex items-center gap-1.5"><span>💻</span> <span><strong>会場：</strong>Zoom（オンライン）</span></div>
         <div class="flex items-center gap-1.5"><span>👥</span> <span><strong>対象：</strong>全国の中学生・高校生（生徒会・有志）</span></div>
         <div class="flex items-center gap-1.5"><span>🎫</span> <span><strong>参加費：</strong>無料</span></div>
       </div>
-
-      <!-- Googleフォーム申込ボタン -->
-      <div class="pt-2">
-        <a
-          href={formUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 text-white font-bold text-sm sm:text-base no-underline shadow-md hover:scale-[1.02] active:scale-[0.98] transition"
-        >
-          <span>参加申し込みフォームを開く（Googleフォーム）</span>
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </a>
-      </div>
     </div>
 
-    <!-- タイムテーブル -->
+    <!-- タイムテーブル（実績） -->
     <div class="space-y-6 text-left">
       <div class="space-y-1">
         <span class="text-xs font-mono font-bold text-blue-600 tracking-wider uppercase">TIMETABLE</span>
         <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
-          当日のスケジュール
+          当日のプログラム実績
         </h2>
       </div>
 
@@ -122,7 +114,7 @@ const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
               講師：新潟大学 災害・復興科学研究所 卜部厚志 教授
             </p>
             <p class="text-xs text-slate-500 leading-relaxed">
-              講演時間 約45〜55分 ＋ 参加中高生との質疑応答10分。現場の第一線から地域防災のリアルを学びます。
+              現場の第一線から地域防災のリアルについてお話しいただき、参加中高生との活発な質疑応答が行われました。
             </p>
           </div>
         </div>
@@ -136,7 +128,7 @@ const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
               グループディスカッション（ブレイクアウトルーム）
             </h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              極力地域別に分かれ、JYRACオリジナル防災ゲームや「理想の街」についてのディスカッションを展開。
+              地域別に分かれ、JYRACオリジナル防災ゲームや「理想の街」についての熱い議論が交わされました。
             </p>
           </div>
         </div>
@@ -146,7 +138,7 @@ const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
           <div class="font-mono font-bold text-slate-500 text-sm w-28 shrink-0">18:45 – 18:50</div>
           <div>
             <h3 class="font-bold text-slate-900 text-base">閉会の言葉・閉会</h3>
-            <p class="text-xs text-slate-500 mt-0.5">JYRAC理事長：久保 壮太郎 ｜ 18:50 終了予定</p>
+            <p class="text-xs text-slate-500 mt-0.5">JYRAC理事長：久保 壮太郎</p>
           </div>
         </div>
       </div>
@@ -157,9 +149,8 @@ const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
       <div class="space-y-1">
         <span class="text-xs font-mono font-bold text-emerald-600 tracking-wider uppercase">WORKSHOP & TOPICS</span>
         <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
-          グループディスカッションの注目企画
+          グループディスカッションで扱った企画
         </h2>
-        <p class="text-xs text-slate-500">Zoomのブレイクアウトルームを使い、全国の仲間と本音で話し合います。</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -172,7 +163,7 @@ const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
             防災ゲーム「HUG Gioco」
           </h3>
           <p class="text-xs text-slate-500 leading-relaxed font-medium">
-            JYRACオリジナルの避難所運営・シミュレーションゲーム。状況に応じた迅速な判断力をチームで体験しながら養います。
+            JYRACオリジナルの避難所運営・シミュレーションゲーム。状況に応じた迅速な判断力をチームで体験しながら養いました。
           </p>
         </div>
 
@@ -185,25 +176,14 @@ const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
             自分が思う「理想の街」について
           </h3>
           <p class="text-xs text-slate-500 leading-relaxed font-medium">
-            以下のテーマなどを切り口に、学校や街の防災課題について語り合います：
+            学校や街のリアルな防災課題やアイデアについて意見を交わしました。
           </p>
-          <ul class="text-xs text-slate-600 space-y-1 pl-4 list-disc font-medium leading-relaxed">
-            <li>今の自分の街のリアルな課題は？</li>
-            <li>学校から帰れなくなったらどうする？</li>
-            <li>あなたが地元の防災責任者になったら何をしたい？</li>
-            <li>あなたの地域だからこそできる防災とは？</li>
-            <li>ペットと一緒に避難できる街をつくるには？</li>
-            <li>だれもが避難しやすい町にするためのアイデア</li>
-          </ul>
         </div>
       </div>
     </div>
 
-    <!-- お問い合わせ・レスポンシブ対応 戻るボタン -->
-    <div class="pt-8 border-t border-slate-200 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
-      <p class="text-[11px] sm:text-xs text-slate-400 text-center sm:text-left">
-        主催：特定非営利活動法人日本若者防災復興協会（JYRAC）
-      </p>
+    <!-- お問い合わせ・レスポンシブ対応 戻るボタン / DAY 3 案内 -->
+    <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
       <a
         href={`${cleanBase}/`}
         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-300 hover:border-blue-500 hover:text-blue-600 text-slate-700 text-xs sm:text-sm font-bold shadow-2xs transition active:scale-95 no-underline"
@@ -212,6 +192,13 @@ const formUrl = "https://forms.gle/Ece2mBtR8T3KQ2TA7";
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
         <span>トップページに戻る</span>
+      </a>
+
+      <a
+        href={`${cleanBase}/autumn/day3`}
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-bold text-xs sm:text-sm shadow-md hover:scale-[1.02] active:scale-98 transition no-underline"
+      >
+        <span>受付中の DAY 3（11/28）案内を見る →</span>
       </a>
     </div>
 
