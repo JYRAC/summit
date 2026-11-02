@@ -4,11 +4,12 @@ import Layout from '../../layouts/Layout.astro';
 
 const cleanBase = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const logoPath = `${cleanBase}/logo.png`;
+const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfuLJHFS0j6d95BWNCJ_f5RRiXdGeUnEsea0XvhnYdk_uq72A/viewform?usp=header";
 ---
 
 <Layout
   title="11月度 秋の陣 DAY 3 | 生徒会防災サミット2026"
-  description="2026年11月開催予定。生徒会防災サミット2026 秋の陣 DAY 3。（詳細順次発表）"
+  description="2026年11月28日（土）開催。生徒会防災サミット2026 秋の陣 DAY 3。全国の中高生が集う最終セッション。"
 >
   <!-- ナビゲーションバー -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-2xs">
@@ -20,7 +21,7 @@ const logoPath = `${cleanBase}/logo.png`;
             生徒会防災サミット
           </span>
           <span class="text-[8px] sm:text-[9px] font-black tracking-widest text-indigo-600 uppercase font-mono">
-            DAY 3 / NOVEMBER 2026
+            DAY 3 / 2026.11.28
           </span>
         </div>
       </a>
@@ -41,20 +42,20 @@ const logoPath = `${cleanBase}/logo.png`;
 
   <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-16 space-y-8 sm:space-y-12">
     
-    <!-- メインカード：Coming Soon -->
+    <!-- メインカード：詳細・受付中 -->
     <div class="relative overflow-hidden bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xs space-y-6 text-left">
-      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 via-blue-500 to-teal-500"></div>
 
       <!-- ステータスバッジ -->
       <div class="flex flex-wrap items-center gap-2">
-        <span class="px-2.5 py-1 rounded bg-indigo-100 text-indigo-700 text-[10px] font-mono font-black tracking-wider uppercase">
-          NOVEMBER 2026
+        <span class="px-2.5 py-1 rounded bg-indigo-600 text-white text-[10px] font-mono font-black tracking-wider uppercase">
+          2026.11.28 SAT
         </span>
-        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-600 text-[10px] font-mono font-bold uppercase animate-pulse">
-          Coming soon...
+        <span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 text-[10px] font-mono font-bold uppercase animate-pulse">
+          ENTRY OPEN / 受付中
         </span>
         <span class="px-2.5 py-1 rounded bg-indigo-50 text-indigo-700 text-[11px] font-bold border border-indigo-100">
-          詳細順次発表
+          秋の陣 最終セッション
         </span>
       </div>
 
@@ -68,45 +69,44 @@ const logoPath = `${cleanBase}/logo.png`;
       </div>
 
       <p class="text-xs sm:text-base text-slate-600 leading-relaxed font-medium">
-        9月の「DAY 1」、10月の「DAY 2」に続く、秋の陣シリーズの第3弾セッション。<br class="hidden sm:inline" />
-        開催日程・企画内容などの詳細は決定次第、公式SNS等で順次発表いたします。
+        9月の「DAY 1」、10月の「DAY 2」に続く、秋の陣シリーズの集大成セッション。<br class="hidden sm:inline" />
+        全国の中高生・生徒会が集い、実践成果の発表と共同提言の取りまとめを行います。
       </p>
 
       <!-- 概要枠 -->
       <div class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200/80 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-slate-700">
         <div class="flex items-center gap-1.5">
-          <span>📅</span> <span><strong>時期：</strong>2026年11月開催予定（日時調整中）</span>
+          <span>📅</span> <span><strong>日時：</strong>2026年11月28日（土）</span>
         </div>
         <div class="flex items-center gap-1.5">
-          <span>💻</span> <span><strong>形式：</strong>オンライン予定</span>
+          <span>💻</span> <span><strong>会場：</strong>オンライン（Zoom）</span>
         </div>
         <div class="flex items-center gap-1.5">
           <span>👥</span> <span><strong>対象：</strong>全国の中学生・高校生（生徒会・有志）</span>
         </div>
         <div class="flex items-center gap-1.5">
-          <span>🎫</span> <span><strong>参加費：</strong>無料</span>
+          <span>🎫</span> <span><strong>参加費：</strong>完全無料</span>
         </div>
       </div>
 
-      <!-- CTA -->
+      <!-- CTA（Googleフォーム直リンク） -->
       <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+        <a
+          href={formUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-black text-xs sm:text-sm no-underline shadow-md hover:scale-[1.02] active:scale-98 transition"
+        >
+          <span>DAY 3 に参加申し込む（Googleフォーム） ↗</span>
+        </a>
+
         <a
           href="https://www.instagram.com/pred.studentsummit"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-indigo-600 text-white font-bold text-xs sm:text-sm no-underline shadow-sm transition active:scale-98"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-3.5 rounded-xl bg-white border border-slate-300 hover:border-indigo-400 text-slate-700 hover:text-indigo-600 text-xs sm:text-sm font-bold no-underline transition shadow-2xs"
         >
-          <span>公式Instagramで続報を受け取る</span>
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
-
-        <a
-          href={`${cleanBase}/autumn/day1`}
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-white border border-slate-300 hover:border-indigo-400 text-slate-700 hover:text-indigo-600 text-xs sm:text-sm font-bold no-underline transition shadow-2xs"
-        >
-          <span>受付中の DAY 1（9月）を見る →</span>
+          <span>公式Instagramを見る</span>
         </a>
       </div>
     </div>
@@ -120,36 +120,36 @@ const logoPath = `${cleanBase}/logo.png`;
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
         <a href={`${cleanBase}/autumn/day1`} class="p-4 rounded-xl bg-white border border-slate-200 hover:border-blue-400 transition no-underline block space-y-1">
           <div class="flex items-center justify-between">
-            <span class="text-orange-600 font-bold font-mono">09.13 SUN</span>
-            <span class="text-[9px] bg-orange-50 text-orange-700 px-1.5 py-0.5 rounded font-bold">受付中</span>
+            <span class="text-slate-500 font-bold font-mono">09.13 SUN</span>
+            <span class="text-[9px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-bold">終了</span>
           </div>
           <h3 class="font-bold text-slate-900 text-sm">DAY 1（9月）</h3>
-          <p class="text-slate-500 text-[11px]">卜部教授 特別講演 ＋ グループディスカッション</p>
+          <p class="text-slate-500 text-[11px]">卜部教授 特別講演 ＋ グループ対話</p>
         </a>
 
         <a href={`${cleanBase}/autumn/day2`} class="p-4 rounded-xl bg-white border border-slate-200 hover:border-blue-400 transition no-underline block space-y-1">
           <div class="flex items-center justify-between">
-            <span class="text-blue-600 font-bold font-mono">OCTOBER</span>
-            <span class="text-[9px] text-slate-400 font-mono">予告</span>
+            <span class="text-slate-500 font-bold font-mono">10.24 SAT</span>
+            <span class="text-[9px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-bold">終了</span>
           </div>
           <h3 class="font-bold text-slate-900 text-sm">DAY 2（10月）</h3>
-          <p class="text-slate-500 text-[11px]">秋の陣 DAY 2（詳細順次発表）</p>
+          <p class="text-slate-500 text-[11px]">【考える防災から動く防災へ】</p>
         </a>
 
-        <div class="p-4 rounded-xl bg-indigo-50/50 border-2 border-indigo-400 space-y-1">
+        <div class="p-4 rounded-xl bg-indigo-50/50 border-2 border-indigo-500 space-y-1">
           <div class="flex items-center justify-between">
-            <span class="text-indigo-600 font-bold font-mono">NOVEMBER</span>
-            <span class="text-[9px] bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded font-bold">NOW</span>
+            <span class="text-indigo-600 font-bold font-mono">11.28 SAT</span>
+            <span class="text-[9px] bg-indigo-600 text-white px-1.5 py-0.5 rounded font-bold">NOW / 受付中</span>
           </div>
           <h3 class="font-bold text-slate-900 text-sm">DAY 3（11月）</h3>
-          <p class="text-slate-500 text-[11px]">秋の陣 DAY 3（詳細順次発表）</p>
+          <p class="text-slate-600 text-[11px]">成果発表・全国共同提言の策定</p>
         </div>
       </div>
     </div>
 
     <!-- ボトム導線 -->
     <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-      <p>主催：特定非営利活動法人日本若者防災復興協会（JYRAC）</p>
+      <p>主催：JYRAC（特定非営利活動法人日本若者防災復興協会）</p>
       <a href={`${cleanBase}/`} class="text-blue-600 font-bold hover:underline no-underline">
         トップページに戻る →
       </a>
